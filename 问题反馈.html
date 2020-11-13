@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!-- saved from url=(0099)https://www.17sucai.com/preview/17147/2020-05-29/vue%E9%97%AE%E9%A2%98%E5%8F%8D%E9%A6%88/index.html -->
+<html lang="en" style="font-size: 55.2px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>问题反馈</title>
+		<link rel="stylesheet" href="./问题反馈_files/style.css">
+		<link rel="stylesheet" type="text/css" href="./问题反馈_files/common.css">
+		<link rel="stylesheet" type="text/css" href="./问题反馈_files/index.css">
+	</head>
+	<body>
+		<div id="app" class="vueBox"><div class="page-box"><div class="suggest-title"><span class="text-star">*</span> <span>问题类型</span></div> <input readonly="readonly" type="text" placeholder="请选择问题类型" class="input-box"> <div class="suggest-title"><span class="text-star">*</span> <span>问题描述</span></div> <div class="area-box"><textarea placeholder="请输入您的问题或建议" maxlength="200" class="textarea-box"></textarea> <div class="amount-box"><p class="amount-txt">0</p> <p class="amount-txt">/</p> <p class="amount-txt">200</p></div></div> <div class="suggest-title suggest-upload"><p><span>上传图片</span> <span class="text-tip">（0/3）</span></p></div> <ul class="upload_warp_imgs"> <li class="upload_warp_btn"><img src="./问题反馈_files/ico-plus.png" class="ico-plus"> <input id="file" type="file" accept="image/*" class="upload_file"></li></ul> <div class="suggest-title"><span class="text-star">*</span> <span>联系方式</span></div> <input maxlength="11" type="text" placeholder="请输入手机号" class="input-box"> <div class="btn-box"><div class="btn-submit-opacity">确认提交</div></div></div> <div class="mint-popup mint-popup-bottom" style="z-index: 2001; display: none;"><ul class="mint-popup-head"><li>取消</li> <li>确认</li></ul> <div class="picker"><!----><div class="picker-items"><div class="picker-slot picker-slot-center" style="flex: 1 1 0%; -webkit-box-flex: 1;"><div class="picker-slot-wrapper" style="height: 180px; transform: translate(0px, 72px) translateZ(0px);"><div class="picker-item picker-selected" style="height: 36px; line-height: 36px;">
+      类型一
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      类型二
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      类型三
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      类型四
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      类型五
+    </div></div><!----></div><div class="picker-center-highlight" style="height: 36px; margin-top: -18px;"></div></div></div></div></div>
+	
+	<!-- 引入组件库 -->
+	<script src="./问题反馈_files/vue.js.下载"></script>
+	<script src="./问题反馈_files/axios.min.js.下载"></script>
+	<script src="./问题反馈_files/index.js.下载"></script>
+	<script src="./问题反馈_files/resize.js.下载"></script>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				// 选择类型
+				problem_name: '',
+				problemVisible: false,
+				problem_list: [{
+					flex: 1,
+					values: [{
+						"id": 11,
+						"name": "类型一"
+					}, {
+						"id": 21,
+						"name": "类型二"
+					}, {
+						"id": 21,
+						"name": "类型三"
+					}, {
+						"id": 41,
+						"name": "类型四"
+					}, {
+						"id": 51,
+						"name": "类型五"
+					}],
+					textAlign: 'center'
+				}],
+				ico_plus: 'images/ico-plus.png',
+				ico_del: 'images/ico-del.png',
+				sid: '123',
+				comment: '',
+				maxlen: 200,
+				mobile: '',
+				imgList: [],
+				is_submit: false
+			},
+			computed: {
+				lens: function() {
+					var lens = 0; // 中文算2个字
+					for (i = 0; i < this.comment.length; i++) {
+						if ((this.comment.charCodeAt(i) >= 0) && (this.comment.charCodeAt(i) <= 255))
+							lens = lens + 1;
+						else
+							lens = lens + 2;
+					}
+					return lens;
+				},
+				is_can: function() { //控制提交按钮
+					return (this.comment && this.mobile && this.mobile.length >= 11)
+				}
+			},
+			created: function() {
+				if (localStorage.getItem('mobile')) {
+					this.mobile = localStorage.getItem('mobile')
+				}
+			},
+			methods: {
+				// 类型弹窗
+				showProblemName: function() {
+					this.problemVisible = true;
+					if (!this.problem_temp) {
+						this.problem_temp = this.problem_list[0].values[0].name;
+					}
+				},
+				problemChange: function(picker, values) {
+					if (picker.getSlotValue(0)) {
+						this.problem_temp = picker.getSlotValue(0).name
+					}
+				},
+				selectProblem: function(bool) {
+					// bool 判断 触发的是取消还是确认按钮
+					this.problem_name = bool ? this.problem_temp : this.problem_name;
+					this.problemVisible = false
+				},
+				// 图片上传
+				fileChange: function(el) {
+					if (!el.target.files[0].size) return;
+					this.fileList(el.target.files);
+					el.target.value = '';
+				},
+				fileList: function(files) {
+					for (var i = 0; i < files.length; i++) {
+						this.fileAdd(files[i]);
+					}
+				},
+				fileAdd: function(file) {
+					var that = this;
+					var reader = new FileReader();
+					reader.readAsDataURL(file);
+					reader.onload = function() {
+						file.src = reader.result;
+						that.imgList.push({
+							file: file
+						});
+					}
+				},
+				fileDel: function(index) {
+					this.imgList.splice(index, 1);
+				},
+				//提交数据
+				submitMsg: function() {
+					if (this.instance) {
+						this.instance.close()
+					}
+					if (!this.problem_name) {
+						this.instance = this.$toast({
+							message: '请选择问题类型！',
+							duration: 1000
+						});
+						return
+					}
+					if (!this.comment) {
+						this.instance = this.$toast({
+							message: '请输入您的问题或建议！',
+							duration: 1000
+						});
+						return
+					}
+					if (this.mobile.length < 11) {
+						this.instance = this.$toast({
+							message: '请输入正确的手机号码',
+							duration: 1000
+						});
+						return
+					}
+					if (this.is_submit) {
+						return false
+					}
+					this.is_submit = true;
+					localStorage.setItem('mobile', this.mobile);
+					// 整合数据
+					var formData = new FormData();
+					formData.append("platform", this.platform);
+					formData.append("sid", this.sid);
+					formData.append("mobile", this.mobile);
+					formData.append("comment", this.comment);
+					for (var i = 0; i < this.imgList.length; i++) {
+						formData.append("imgs", this.imgList[i].file);
+					}
+					// 测试打印数据
+					console.log('mobile', formData.get('mobile'));
+					console.log('comment', formData.get('comment'));
+					console.log('imgs', formData.getAll('imgs'));
+
+					var url = '';
+					var that = this;
+					// 模拟提交
+					axios.post(url, formData)
+						.then(function(resp) {
+							if (resp.error_code == 0) {
+								setTimeout(function() {
+									that.is_submit = false;
+								}, 1200)
+							} else {
+								that.is_submit = true;
+							}
+						})
+						.catch(function(er) {
+							that.is_submit = false;
+						})
+				}
+			}
+		});
+	</script>
+
+</body></html>

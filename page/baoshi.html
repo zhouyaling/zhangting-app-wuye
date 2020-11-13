@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>报事处理</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="static/css/frozen.css">
+	<link rel="stylesheet" href="static/css/font-awesome.min.css">
+	<link rel="stylesheet" href="static/css/app.css">
+	<script src="static/js/zepto.min.js"></script>
+	<script src="static/js/frozen.js"></script>
+	<style>
+		.page-nav {
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+		}
+
+		.page-nav>div {
+			border-bottom: 1px solid #888;
+			padding: 0.06rem 0.2rem;
+		}
+
+		.page-nav .active {
+			border-bottom: 1px solid #0297FE;
+			color: #0297FE;
+			font-weight: 600;
+		}
+
+		.bs-item {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: row;
+			position: relative;
+			margin-bottom: 10px;
+			border-bottom: 1px solid #f2f2f2;
+			padding: 10px;
+		}
+
+		.bs-img-box {
+			width: 30%;
+			height: 100px;
+			background: url(./resource/default-img.png) no-repeat center;
+			background-size: 100% 100%;
+			padding-left: 15px;
+			box-sizing: border-box;
+		}
+
+		.bs-info-box {
+			width: 70%;
+			height: 100px;
+			display: flex;
+			justify-content: space-around;
+			flex-direction: column;
+			padding-left: 15px;
+			box-sizing: border-box;
+			color: #444;
+		}
+
+		.bs-infot-btns {}
+
+		.bs-info-btns>span:nth-of-type(1) {
+			border-radius: 3px;
+			padding: 5px 10px;
+			border: 1px solid #C7374C;
+			margin-right: 10px;
+			font-size: 10px;
+			color: #C7374C;
+		}
+
+		.bs-info-btns>span:nth-of-type(2) {
+			border-radius: 3px;
+			padding: 5px 10px;
+			border: 1px solid #C7374C;
+			font-size: 10px;
+			color: #C7374C;
+		}
+	</style>
+</head>
+
+<body ontouchstart="">
+	<header class="ui-header ui-header-positive ui-border-b">
+		<i class="ui-icon-return" onclick="window.location.href = 'application.html'"></i>
+		<h1>报事处理</h1>
+	</header>
+
+	<style>
+		.icon_big {
+			width: 50px;
+			height: 50px;
+		}
+
+		.app-item {
+			height: 75px;
+			background: #fff;
+		}
+
+		.icon_app {
+			background: #fff;
+			background-repeat: no-repeat;
+			background-size: 64px;
+			height: 64px;
+			padding-left: 75px;
+			border-bottom: 1px #f2f2f2 solid;
+
+		}
+	</style>
+
+	<section class="ui-container">
+		<div class="ui-searchbar-wrap ui-border-b">
+			<div class="ui-searchbar ui-border-radius">
+				<i class="ui-icon-search"></i>
+				<div class="ui-searchbar-text">搜索</div>
+				<div class="ui-searchbar-input"><input value="" type="tel" placeholder="搜索" autocapitalize="off"></div>
+				<i class="ui-icon-close"></i>
+			</div>
+			<button class="ui-searchbar-cancel">取消</button>
+		</div>
+		<div class="page-nav">
+			<div class="active" onclick="changeNav(1,this)">待处理</div>
+			<div  onclick="changeNav(2,this)">已处理</div>
+		</div>
+		<div id="list">
+		</div>
+	</section>
+
+</body>
+<script src="./static/js//jquery.min.js"></script>
+<script>
+	$(document).ready(function () {
+		var htmls = "";
+		for (var i = 0; i < 6; i++) {
+			htmls += '<div class="bs-item">' +
+				'<div class="bs-img-box"></div>' +
+				'<div class="bs-info-box">' +
+				'	<div>报事转派</div>' +
+				'	<div class="bs-info-btns">' +
+				'		<span>工区保洁</span>' +
+				'		<span>室内</span>' +
+				'	</div>' +
+				'	<div>2020-11-14 08:00:00</div>' +
+				'</div>' +
+				'</div > ';
+		}
+
+		$('#list').html(htmls)
+	})
+
+	function changeNav(type,el){
+		$('.page-nav').find('.active').removeClass('active')
+		debugger
+		$(el).addClass('active')
+	}
+</script>
+
+</html>
