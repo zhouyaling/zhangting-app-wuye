@@ -1,75 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-	<title>待办</title>
+	<title>品质巡检</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
 	<meta name="format-detection" content="telephone=no">
 	<link rel="stylesheet" href="static/css/frozen.css">
 	<link rel="stylesheet" href="static/css/font-awesome.min.css">
 	<link rel="stylesheet" href="static/css/app.css">
 	<script src="static/js/zepto.min.js"></script>
-    <script src="static/js/frozen.js"></script>
+	<script src="static/js/frozen.js"></script>
+	<style>
+		.page-nav {
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+		}
+
+		.page-nav>div {
+			border-bottom: 1px solid #888;
+			padding: 0.06rem 0.2rem;
+			font-size: 0.15rem;
+		}
+
+		.page-nav .active {
+			border-bottom: 1px solid #0297FE;
+			color: #0297FE;
+			font-weight: 600;
+		}
+
+		.bs-item {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: row;
+			position: relative;
+			margin-bottom: 10px;
+			border-bottom: 1px solid #f2f2f2;
+			padding: 10px;
+		}
+
+		.bs-img-box {
+			width: 30%;
+			height: 100px;
+			background: url(./resource/default-img.png) no-repeat center;
+			background-size: 100% 100%;
+			padding-left: 15px;
+			box-sizing: border-box;
+		}
+
+		.bs-info-box {
+			width: 70%;
+			height: 100px;
+			display: flex;
+			justify-content: space-around;
+			flex-direction: column;
+			padding-left: 15px;
+			box-sizing: border-box;
+			color: #444;
+		}
+
+		.bs-infot-btns {}
+
+		.bs-info-btns>span:nth-of-type(1) {
+			border-radius: 3px;
+			padding: 5px 10px;
+			border: 1px solid #C7374C;
+			margin-right: 10px;
+			font-size: 10px;
+			color: #C7374C;
+		}
+
+		.bs-info-btns>span:nth-of-type(2) {
+			border-radius: 3px;
+			padding: 5px 10px;
+			border: 1px solid #C7374C;
+			font-size: 10px;
+			color: #C7374C;
+		}
+		.no-info{
+			 text-align: center;
+			 font-size: 0.16rem;
+			 color: #666;
+		}
+
+		.no-info img{
+			width: 50%;
+			height: auto;
+			margin-bottom: 0.2rem;
+			margin-top: 30%;
+		}
+	</style>
 </head>
+
 <body ontouchstart="">
 	<header class="ui-header ui-header-positive ui-border-b">
 		<i class="ui-icon-return" onclick="history.back()"></i>
-		<h1>我的邮件</h1>
+		<h1>品质巡检</h1>
 	</header>
 
-	<style>
-		.icon_big{
-			width: 50px;
-			height: 50px;
-		}
-		.app-item{
-			height: 75px;
-			background: #fff;
-		}
-		.icon_app{
-			background: #fff;
-			background-repeat: no-repeat;
-			background-size: 64px;
-			height: 64px;
-			padding-left: 75px;
-			border-bottom: 1px #f2f2f2 solid;
-		}
-		
-	</style>
-
 	<section class="ui-container">
-		<!-- <ul class="ui-list ui-border-tb">
-			<li class="ui-border-t">
-				<div class="ui-list-img">
-					<span style="background-image:url(img/ic_headpic.png);"></span>
-				</div>
-				<div class="ui-list-info">
-					<h4 class="ui-nowrap">这是标题，加ui-nowrap可以超出长度截断</h4>
-					<p class="ui-nowrap">这是内容，加ui-nowrap可以超出长度截断</p>
-				</div>
-			</li>
-			<li class="ui-border-t">
-				<div class="ui-avatar">
-					<span style="background-image:url(http://placeholder.qiniudn.com/100x100)"></span>
-				</div>
-				<div class="ui-list-info">
-					<h4 class="ui-nowrap">这是标题，加ui-nowrap可以超出长度截断</h4>
-					<p class="ui-nowrap">这是内容，加ui-nowrap可以超出长度截断</p>
-				</div>
-			</li>
-		</ul> -->
-		<img src="static/picture/mail.png" style="width: 100%;" alt="">
+		<div class="page-nav">
+			<div class="active" onclick="changeNav(1,this)">未完成</div>
+			<div onclick="changeNav(2,this)">已完成</div>
+		</div>
+		<div id="list">
+			<div class="no-info">
+				<img src="./static//image/ic_noinfo.png" alt="">
+				<div>暂无数据</div>
+			</div>
+		</div>
 	</section>
-
-	<script>
-		$(function(){
-			var slider = new fz.Scroll('.ui-slider', {
-		        role: 'slider',
-		        indicator: true,
-		        autoplay: true,
-		        interval: 3000
-		    });
-		});
-	</script>
 </body>
+<script src="./static/js//jquery.min.js"></script>
+<script>
+	$(document).ready(function () {
+		
+	})
+
+	function changeNav(type, el) {
+		$('.page-nav').find('.active').removeClass('active')
+		$(el).addClass('active')
+	}
+</script>
+
 </html>

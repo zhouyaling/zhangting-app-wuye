@@ -59,12 +59,12 @@
 	</style>
 	<section class="ui-container">
 		<ul class="ui-list ui-border-tb">
-			<li id="cpfahb">
+			<li onclick="pageTo(0)">
 				<div class="ui-list-thumb">
 					<span style="background-image:url(static/image/ic_product.png);"></span>
 				</div>
 				<div class="ui-list-info ui-border-t">
-					<h4 class="ui-nowrap">三环云产品方案汇报
+					<h4 class="ui-nowrap">关于开展园区消杀的温馨提示
 						<samll style="float: right">2017/8/16 10:11</samll>
 					</h4>
 					<p class="ui-nowrap">[协同]高博&nbsp&nbsp&nbsp&nbsp2017-06-28</p>
@@ -74,12 +74,12 @@
 					</p>
 				</div>
 			</li>
-			<li>
+			<li onclick="pageTo(1)">
 				<div class="ui-list-thumb">
 					<span style="background-image:url(static/image/ic_product.png);"></span>
 				</div>
 				<div class="ui-list-info ui-border-t">
-					<h4 class="ui-nowrap">三环云产品方案汇报
+					<h4 class="ui-nowrap">关于高空抛物的温馨提示
 						<samll style="float: right">2017/8/16 10:11</samll>
 					</h4>
 					<p class="ui-nowrap">[协同]高博&nbsp&nbsp&nbsp&nbsp2017-06-28</p>
@@ -89,12 +89,12 @@
 					</p>
 				</div>
 			</li>
-			<li>
+			<li onclick="pageTo(2)">
 				<div class="ui-list-thumb">
-					<span style="background-image:url(static/image/ic_diaocha.png);"></span>
+					<span style="background-image:url(static/image/ic_product.png);"></span>
 				</div>
 				<div class="ui-list-info ui-border-t">
-					<h4 class="ui-nowrap">三环云产品方案汇报
+					<h4 class="ui-nowrap">关于龙湖唐宁one地下室品质升级的通知
 						<samll style="float: right">2017/8/16 10:11</samll>
 					</h4>
 					<p class="ui-nowrap">[协同]高博&nbsp&nbsp&nbsp&nbsp2017-06-28</p>
@@ -104,12 +104,27 @@
 					</p>
 				</div>
 			</li>
-			<li>
+			<li onclick="pageTo(3)">
+				<div class="ui-list-thumb">
+					<span style="background-image:url(static/image/ic_product.png);"></span>
+				</div>
+				<div class="ui-list-info ui-border-t">
+					<h4 class="ui-nowrap">关于收费推送通知
+						<samll style="float: right">2017/8/16 10:11</samll>
+					</h4>
+					<p class="ui-nowrap">[协同]高博&nbsp&nbsp&nbsp&nbsp2017-06-28</p>
+					<p class="ui-nowarp">
+						<i class="icon-comment-alt"></i>
+						<span style="margin-left: 5px;">共有0条回复</span>
+					</p>
+				</div>
+			</li>
+			<li onclick="pageTo(4)">
 				<div class="ui-list-thumb">
 					<span style="background-image:url(static/image/ic_gzbj.png);"></span>
 				</div>
 				<div class="ui-list-info ui-border-t">
-					<h4 class="ui-nowrap">三环云产品方案汇报
+					<h4 class="ui-nowrap">你有一条关于巡更待办的消息提醒
 						<samll style="float: right">2017/8/16 10:11</samll>
 					</h4>
 					<p class="ui-nowrap">[协同]高博&nbsp&nbsp&nbsp&nbsp2017-06-28</p>
@@ -119,14 +134,29 @@
 					</p>
 				</div>
 			</li>
+			<li onclick="pageTo(5)">
+				<div class="ui-list-thumb">
+					<span style="background-image:url(static/image/ic_gzbj.png);"></span>
+				</div>
+				<div class="ui-list-info ui-border-t">
+					<h4 class="ui-nowrap">你有一条装修待办的消息提醒
+						<samll style="float: right">2017/8/16 10:11</samll>
+					</h4>
+					<p class="ui-nowrap">[协同]高博&nbsp&nbsp&nbsp&nbsp2017-06-28</p>
+					<p class="ui-nowarp">
+						<i class="icon-comment-alt"></i>
+						<span style="margin-left: 5px;">共有0条回复</span>
+					</p>
+				</div>
+			</li>
+			
 		</ul>
 	</section>
 
 	<script>
-		$('#cpfahb').click(function () {
-			location.href = "shycpfa.html";
-
-		})
+		function pageTo(id){
+			window.location.href="message.html?id=" + id 
+		}
 	</script>
 </body>
 
