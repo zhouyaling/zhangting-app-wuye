@@ -1,31 +1,33 @@
 .body{
 	font-family: "Helvetica Neue",Helvetica,STHeiTi,sans-serif;
 	line-height: 1.5;
-	font-size: 14px;
+	font-size: 0.14rem;
 }
 .demo-desc {
-	padding: 5px;
-	font-size: 14px;
+	padding: 0.05rem;
+	font-size: 0.14rem;
 	color: rgba(0,0,0,0.9);
 	background: #eee;
 	font-weight: bold;
+	padding-left: 0.16rem;
 }
 .full {
 	width: 100%;
-	max-width: 640px;
+	max-width: 6.4rem;
 	margin-left: auto;
 	margin-right: auto;
 }
 .footer-main {
+	padding: 0.12rem 0;
 	display: -webkit-box;
 	background: #f0f0f0;
 }
 .footer-main>a {
-	padding-top: 5px;
+	padding-top: 0.05rem;
 	display: block;
 	-webkit-box-flex: 1;
 	text-align: center;
-	font-size: 12px;
+	font-size: 0.12rem;
 	color: #666;
 }
 .fixed-bottom {
@@ -37,6 +39,6 @@
 	right: 0;
 }	
 .iconfont{
-	width: 32px;
-	height: 32px;
+	width: 0.32rem;
+	height: 0.32rem;
 }
