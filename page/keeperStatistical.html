@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>装修统计</title>
+    <script src="static//js/jquery.min.js"></script>
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/common.css" />
+    <link rel="stylesheet" href="static/css/frozen.css" />
+    <script>
+    </script>
+</head>
+
+<body class="manager_bg">
+    <div class="areas">
+        <div class="select_areas">
+
+            <div class="select_areas_title" id="yx_select">您当前所在小区</div>
+            <!--   <div class="select_areas_content">
+                <select id="yx_select" disabled>
+                 
+                </select> -->
+        </div>
+    </div>
+    </div>
+    <div class="decorate_cont">
+        <div class="count">
+            <table width="100%">
+                <thead>
+                    <td>户数</td>
+                    <td>当天</td>
+                    <td>本周</td>
+                    <td>本月</td>
+                </thead>
+                <tr class="count_list">
+                    <td class="count_list_color">正在装修</td>
+                    <td id="todayFitCount">2</td>
+                    <td id="weekFitCount">3</td>
+                    <td id="monthFitCount">4</td>
+                </tr>
+                <tr class="count_list">
+                    <td class="count_list_color">新增装修</td>
+                    <td id="todayNewCount">0</td>
+                    <td id="weekNewCount">0</td>
+                    <td id="monthNewCount">3</td>
+                </tr>
+                <tr class="count_list">
+                    <td class="count_list_color">装修完工</td>
+                    <td id="todayFinishCount">0</td>
+                    <td id="weekFinishCount">0</td>
+                    <td id="monthFinishCount">0</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="decorate_top">
+        <div class="count_title">
+            <h3>本小区装修公司排行榜</h3>
+        </div>
+        <div class="count">
+            <table width="100%" id="countCompany">
+                <thead>
+                    <td>排名</td>
+                    <td>装修公司名称</td>
+                    <td>装修户数</td>
+                    <td>操作</td>
+                </thead>
+                <tr class="count_list">
+                    <td>1</td>
+                    <td>乐尚装饰</td>
+                    <td>40</td>
+                    <td>--</td>
+                </tr>
+                <tr class="count_list">
+                    <td>2</td>
+                    <td>重庆东易日盛装饰</td>
+                    <td>32</td>
+                    <td>--</td>
+                </tr>
+                <tr class="count_list">
+                    <td>3</td>
+                    <td>佳天下装饰</td>
+                    <td>26</td>
+                    <td>--</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="decorate_top">
+        <div class="count_title">
+            <h3>巡查情况</h3>
+        </div>
+        <div class="count">
+            <table width="100%" id="patrolTaskList">
+                <thead>
+                    <td></td>
+                    <td>工程巡查</td>
+                    <td>客服巡查</td>
+                    <td>秩序巡查</td>
+                </thead>
+                <tr class="count_list">
+                    <td>应巡</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                </tr>
+                <tr class="count_list">
+                    <td>实巡</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

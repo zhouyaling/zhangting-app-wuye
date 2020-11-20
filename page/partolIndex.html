@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>装修巡查</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/common.css" />
+    <link rel="stylesheet" href="static/css/frozen.css" />
+    <script>
+    </script>
+
+</head>
+
+<body class="manager_bg2">
+    <div class="decorate_mes">
+        <div class="decorate_mes_content">
+            <div class="decorate_mes_content_left">
+                <div class="yuan">
+                    <div class="yuan_bl1"></div>
+                    <div class="yuan_text">
+                        <p id="todayPercent">100%</p>
+                        <div class="today">当天完成率</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="decorate_mes_content_right">
+                <div class="decorate_mes_content_right_list">
+                    <p>完成率</p>
+                    <div class="t_color f_text"><span class="big-size" id="overPercent">100%</span></div>
+                </div>
+                <div class="decorate_mes_content_right_list">
+                    <p>超时完成</p>
+                    <div class="t_color f_text"><span class="big-size" id="outTime">0</span></div>
+                </div>
+                <div class="decorate_mes_content_right_list">
+                    <p>待完成</p>
+                    <div class="t_color f_text"><span class="big-size" id="standBy">0</span></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="record_btn" onclick="javascript:getRecordListHtml();">违章记录</div>
+    </div>
+    <div class="decorate_check" id="partolIndex">
+
+    </div>
+    <div>
+        <div style="display:none" id="iosId" onclick="userNameAction();" class="shaomiao_btns">开始扫描任务</div>
+        <div class="shaomiao_btns" id="anId" onclick="androidCallback11();" style="display:none">开始扫描任务</div>
+    </div>
+    <div style="height:30px;"></div>
+</body>
+
+</html>
