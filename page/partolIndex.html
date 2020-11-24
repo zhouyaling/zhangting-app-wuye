@@ -16,6 +16,11 @@
 </head>
 
 <body class="manager_bg2">
+    <header class="ui-header ui-header-positive ui-border-b">
+        <i class="ui-icon-return" onclick="history.go(-1)"></i>
+        <h1>装修巡查</h1>
+    </header>
+    <section class="ui-container">
     <div class="decorate_mes">
         <div class="decorate_mes_content">
             <div class="decorate_mes_content_left">
@@ -54,6 +59,13 @@
         <div class="shaomiao_btns" id="anId" onclick="androidCallback11();" style="display:none">开始扫描任务</div>
     </div>
     <div style="height:30px;"></div>
+    </section>
 </body>
+<script>
+    function getRecordListHtml() {
+        window.location.href = "getRecordList.html";
+    }
+
+</script>
 
 </html>

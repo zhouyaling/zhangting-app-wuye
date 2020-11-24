@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./static/css/car-common.css">
+    <link rel="stylesheet" href="./static/css/car-index.css">
+    <title>车辆管理</title>
+</head>
+
+<body>
+    <div class="page">
+        <div class="views">
+            <ul class="detail-form-box">
+                <li class="form-item">
+                    <div class="form-label">车牌号</div>
+                    <div class="form-input">
+                        <span id="carNo" class="form-value"></span>
+                    </div>
+                </li>
+                <li class="form-item">
+                    <div class="form-label">入场时间</div>
+                    <div class="form-input">
+                        <span id="inTime" class="form-value"></span>
+                    </div>
+                </li>
+                <li class="form-item">
+                    <div class="form-label">查询时间</div>
+                    <div class="form-input">
+                        <span id="searchTime" class="form-value"></span>
+                        <span class="refresh" onclick="refresh()"></span>
+                    </div>
+                </li>
+                <li class="form-item">
+                    <div class="form-label">当前停车费</div>
+                    <div class="form-input">
+                        <span class="form-value spec">￥<span id="payAmount">0.00</span></span>
+                    </div>
+                </li>
+            </ul>
+            <div class="btn-box">
+                <div class="sub-title">缴费后请在<span id="freeTimeOut">10</span>分钟后出场</div>
+                <div class="form-btn active" onclick="payAction()">缴费</div>
+            </div>
+
+        </div>
+        <div id="payhtml" style="display: none"></div>
+    </div>
+</body>
+<script src="./static/js/jquery.min.js"></script>
+<script src="./static/js/layer_mobile/layer.js"></script>
+<script src="./static/js/template.js"></script>
+<script src="./static/js/car-common.js"></script>
+<script>
+    var _this = {
+        projectId: "",
+        carNo: "",
+        inTime: "",
+        searchTime: "",
+        payAmount: 0,
+        freeTimeOut: 10,
+    };
+
+    $(document).ready(function () {
+        _this.projectId = getQueryString("projectId") ? getQueryString("projectId") : "";
+        _this.carNo = getQueryString("carNo") ? getQueryString("carNo") : "";
+        $('#carNo').html(_this.carNo);
+    });
+</script>
+
+</html>

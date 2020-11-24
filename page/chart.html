@@ -1,26 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-	<title>欠费查询</title>
+	<title>云监控</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="static/css/frozen.css">
-	<link rel="stylesheet" href="static/css/font-awesome.min.css">
-	<link rel="stylesheet" href="static/css/app.css">
-	<script src="static/js/zepto.min.js"></script>
-    <script src="static/js/frozen.js"></script>
+	<link rel="stylesheet" href="static/css/style.css" />
+	<link rel="stylesheet" href="static/css/common.css" />
+	<link rel="stylesheet" href="static/css/frozen.css" />
+	<style>
+		.monitor-list .item {
+			width: 88vw;
+			margin: 2vw 6vw 0 6vw;
+		}
+
+		.monitor-list .jkq {
+			display: inline-block;
+			width: 16vw;
+			height: 16vw;
+			margin-top: 5.3vw;
+			margin-left: 5.3vw;
+		}
+
+		.monitor-list .r {
+			width: 16vw;
+			height: 16vw;
+			background: url(static/img/jkq-red.png) no-repeat center;
+			background-size: cover;
+		}
+
+		.monitor-list .b {
+			width: 16vw;
+			height: 16vw;
+			background: url(static/img/jkq-blue.png) no-repeat center;
+			background-size: cover;
+		}
+
+		.monitor-list .address {
+			font-family: PingFangSC-Medium;
+			font-size: 18px;
+			color: #FFFFFF;
+			letter-spacing: 0;
+			margin-left: 9.1vw;
+			margin-top: 2.15vw;
+		}
+
+		.monitor-list .status {
+			margin-left: 9.1vw;
+			font-family: PingFangSC-Regular;
+			font-size: 12px;
+			color: #FFFFFF;
+			letter-spacing: 0;
+		}
+
+		.monitor-list .red {
+			width: 88vw;
+			height: 42.9333vw;
+			background: url(static/img/jk-red.png) no-repeat center;
+			background-size: cover;
+		}
+
+		.monitor-list .blue {
+			width: 88vw;
+			height: 42.9333vw;
+			background: url(static/img/jk-blue.png) no-repeat center;
+			background-size: cover;
+		}
+	</style>
 </head>
+
 <body ontouchstart="">
 	<header class="ui-header ui-header-positive ui-border-b">
-		<i class="ui-icon-return" onclick="history.back()"></i>
-		<h1>欠费查询</h1>
+		<i class="ui-icon-return" onclick="history.go(-1)"></i>
+		<h1>云监控</h1>
 	</header>
 	<section class="ui-container">
-		
-	</section>
+		<div class="monitor-list">
 
-	<script>
-	</script>
+		</div>
+	</section>
 </body>
+<script src="./static/js/jquery.min.js"></script>
+<script>
+	function init() {
+		var list = [
+			{
+				name: '小区大门',
+				status: '在线'
+			}, {
+				name: '1号车口入口',
+				status: '在线'
+			}
+			, {
+				name: '2号车口入口',
+				status: '在线'
+			}, {
+				name: '4号车口出口',
+				status: '离线'
+			},
+		]
+
+		var htmls = '';
+		for (var i = 0; i < list.length; i++) {
+			htmls += '<div onclick="showVideo()" class="item ' + (list[i].status == "在线" ? 'blue' : 'red') + '">' +
+				'<i class="jkq ' + (list[i].status == "在线" ? 'b' : 'r') + '"></i>' +
+				'	<div class="address">'+ list[i].name +'</div>' +
+				'		<div class="status">'+ list[i].status +'</div>' +
+				'</div>'
+		}
+
+		$('.monitor-list').html(htmls)
+	}
+
+	init();
+
+	function showVideo() {
+		// window.location.href = "video.html"
+	}
+</script>
+
 </html>

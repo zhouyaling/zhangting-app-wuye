@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>通报详情</title>
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/common.css" />
+    <link rel="stylesheet" href="static/css/frozen.css" />
+    <script src="./static/js/jquery.min.js"></script>
+    <script src="./static/js/ShopFooter.js"></script>
+    <script src="./static/js/bootstrap-fileupload.js"> </script>
+
+</head>
+
+<body class="manager_bg2">
+    <header class="ui-header ui-header-positive ui-border-b">
+        <i class="ui-icon-return" onclick="history.go(-1)"></i>
+        <h1>通报详情</h1>
+    </header>
+    <section class="ui-container">
+        <form id="CommonIamge" enctype="multipart/form-data" method="post">
+            <div class="decorate_persons">
+                <div class="decorate_check_details">
+                    <div class="decorate_check_details_list">
+                        <div class="decorate_check_details_list_title">
+                            报事对象
+                        </div>
+                        <div id="houseId" class="decorate_check_details_list_right">
+                            业主
+                        </div>
+                    </div>
+                    <div class="decorate_check_details_list">
+                        <div class="decorate_check_details_list_title">
+                            位置描述
+                        </div>
+                        <div id="position" class="decorate_check_details_list_right">
+                            5栋6楼
+                        </div>
+                    </div>
+                    <div class="decorate_check_details_list ">
+                        <div class="decorate_check_details_list_title ">
+                            问题发起人
+                        </div>
+                        <div id="comUserName" class="decorate_check_details_list_right">
+                            巡查
+                        </div>
+                    </div>
+                    <div class="decorate_check_details_list no_border">
+                        <div class="decorate_check_details_list_title ">
+                            问题提交时间
+                        </div>
+                        <div id="comTime" class="decorate_check_details_list_right">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="decorate_persons">
+                <div class="decorate_check_details">
+                    <div class="decorate_check_details_list no_border">
+                        <div class="decorate_check_details_list_title">
+                            待整改内容
+                        </div>
+                        <div id="recContent" class="check_discribe">装修时间未按照规定时间。</div>
+                    </div>
+                </div>
+                <div id="imgUrl" class="decorate_picter" style="margin-bottom: 0;padding-top: 5px;">
+                </div>
+            </div>
+            <div class="reapeat_iem">
+
+            </div>
+            <div class="add_bgs">
+                <div class="decorate_picter" id="imgpk">
+                    <div id="yx_nowimg">
+                    </div>
+                    <div class="decorate_imgs01">
+                        <div class="decorate_imgs01_add" onclick="clkInpFile('yx_nowimg')">
+                            <img src="./static/img/add.png">
+                            <p>最多六张</p>
+                        </div>
+
+                    </div>
+                    <div class="bq_imgs">现场施工图片</div>
+                </div>
+            </div>
+            <input type="file" name="ImgeData" accept="image/*" style="display:none;" id="ImgeData" capture="camera" />
+            <div class="decorate_persons" id="redescript">
+                <div class="decorate_check_details">
+                    <div class="decorate_check_details_list no_border">
+                        <div class="decorate_check_details_list_title">
+                            巡查结果描述
+                        </div>
+                        <div class="check_discribe">
+                            <textarea id="remark" rows="4" maxlength="50"
+                                onchange="this.value=this.value.substring(0, 50)"
+                                onkeydown="this.value=this.value.substring(0, 50)"
+                                onkeyup="this.value=this.value.substring(0, 50)"
+                                placeholder="请输入描述内容">目前已经未发现在特殊时间装修的情况</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="check_btns" id="btnco">
+                <div onclick="saveRecord('Y')" class="check_btns_stop">已整改</div>
+                <div onclick="saveRecord('N')" class="check_btns_next">未整改</div>
+            </div>
+        </form>
+    </section>
+</body>
+<script>
+    $('#comTime').html(jsonDateFormatM(2))
+    $(document).ready(function () {
+        $(".check_discribe textarea").focus(function () {
+            if ($.trim($(this).val()) == "请输入描述内容") {
+                $(this).val("")
+            }
+        })
+        $(".check_discribe textarea").blur(function () {
+            if ($.trim($(this).val()) == "") {
+                $(this).val("请输入描述内容")
+            }
+        })
+    })
+
+    function saveRecord(type) {
+        window.location.href = "getRecordList.html";
+    }
+</script>
+
+</html>

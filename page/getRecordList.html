@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>违章记录</title>
+	<link rel="stylesheet" href="static/css/style.css" />
+	<link rel="stylesheet" href="static/css/common.css" />
+	<link rel="stylesheet" href="static/css/frozen.css" />
+	<script src="./static/js/bootstrap-fileupload.js"></script>
+	<script src="./static/js/jquery.min.js"></script>
+</head>
+
+<body class="manager_bg2">
+	<header class="ui-header ui-header-positive ui-border-b">
+		<i class="ui-icon-return" onclick="history.go(-1)"></i>
+		<h1>违章记录</h1>
+	</header>
+	<section class="ui-container">
+		<div class="areas">
+			<div class="select_areas">
+				<div class="select_areas_title" id="yx_select">您当前所在小区</div>
+			</div>
+		</div>
+		<div class="seach">
+			<img src="./static/img/sheach.png" />
+			<input type="text" id="yx_housno" value="请输入房号进行搜索" onfocus="if (value == '请输入房号进行搜索') { value = '' }"
+				onblur="if (value == '') { value = '请输入房号进行搜索' }" class="seach_content" />
+			<input type="button" value="搜索" class="seach_btns" onclick="onloadSearch()" />
+		</div>
+		<div id="yx_content">
+		</div>
+	</section>
+</body>
+<script src="./static/js/ShopFooter.js"></script>
+<script>
+	function onloadSearch() {
+		var houseNoa = $("#yx_housno").val();
+		if (houseNoa == "请输入房号进行搜索") houseNoa = "";
+		onloadgetRecordList(houseNoa, projectId);
+	}
+
+	function onloadgetRecordList(houseNo, projectId) {
+		var url = requertUrl('vioRecordController', 'getRecordList');
+
+		var result = [
+			{
+				id: 1,
+				statusNum: 3,
+				role: 'a',
+				houseNo: '4-7-4',
+				status: '申请不通过',
+				content: '装修时间未按照规定时间。',
+				time: jsonDateFormatM(2)
+			},
+			{
+				id: 1,
+				statusNum: 3,
+				role: 'a',
+				houseNo: '5-6-1',
+				status: '申请不通过',
+				content: '装修时间未按照规定时间。',
+				time: jsonDateFormatM(2)
+			}
+		];
+		// if (result.length == 0 && null != houseNo) { layer.alert("未查询到房屋信息"); }
+		var html = '';
+		var order = 0;
+		for (var i = 0; i < result.length; i++) {
+			order++;
+			html += '  <a href="launchNotification.html?id=' + result[i].id + '&role=' + role + '&handleStateRL=' + result[i].statusNum + '">';
+			html += '  <div class="peccancy">';
+
+			html += ' <div class="peccancy_list">';
+			html += ' <div class="peccancy_list_title">房号</div>';
+			html += ' <div class="peccancy_list_content">' + result[i].houseNo + '</div>';
+			html += ' <div class="peccancy_list_state t_color">' + result[i].status + '</div>';
+			html += ' </div>';
+
+			html += ' <div class="peccancy_list">';
+			html += ' <div class="peccancy_list_title">违章原因</div>';
+			html += ' <div class="peccancy_list_content case1">' + result[i].content + '</div>';
+			html += ' </div>';
+			html += ' <div class="peccancy_list">';
+			html += ' <div class="peccancy_list_state times">' + result[i].time + '</div>';
+			html += ' </div>';
+
+			html += '  </div>';
+			html += '  </a>';
+		}
+		$("#yx_content").html(html)
+
+	}
+</script>
+
+</html>

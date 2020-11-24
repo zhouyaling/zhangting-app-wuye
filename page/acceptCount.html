@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>装修验收</title>
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/common.css" />
+    <link rel="stylesheet" href="static/css/frozen.css" />
+    <style>
+        .list-tab {
+            width: 90%;
+            margin: 20px 5% 0 5%;
+            display: inline-block;
+        }
+
+        .list-tab li {
+            float: left;
+            width: 50%;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            padding: 10px 0;
+        }
+
+        .list-tab li.active {
+            border-bottom: 0.02rem solid #D71438;
+            color: #D71438;
+        }
+
+        .no-info {
+            color: #999999;
+            font-size: 0.12rem;
+            text-align: center;
+            margin: 0.25rem;
+        }
+    </style>
+</head>
+
+<body class="manager_bg2">
+    <header class="ui-header ui-header-positive ui-border-b">
+        <i class="ui-icon-return" onclick="history.go(-1)"></i>
+        <h1>装修验收</h1>
+    </header>
+    <section class="ui-container">
+        <div class="decorate_mes">
+            <div class="decorate_mes_content">
+                <div class="decorate_mes_content_left">
+                    <div class="yuan">
+                        <div class="yuan_bl1"></div>
+                        <div class="yuan_text">
+                            <p id="percentDay">100%</p>
+                            <div class="today">当天完成率</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="decorate_mes_content_right">
+                    <div class="decorate_mes_content_right_list">
+                        <p>完成率</p>
+                        <div class="t_color f_text"><span class="big-size" id="persentCount">100%</span></div>
+                    </div>
+                    <div class="decorate_mes_content_right_list">
+                        <p>超时完成</p>
+                        <div class="t_color f_text"><span class="big-size" id="outimeCount">0</span></div>
+                    </div>
+                    <div class="decorate_mes_content_right_list">
+                        <p>待完成</p>
+                        <div class="t_color f_text"><span class="big-size" id="standbyCount">0</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="record_btn" onclick="javascript:getRecordListHtml();">违章记录</div>
+        </div>
+        <ul class="list-tab">
+            <li class="active"><span>待验收</span></li>
+            <li><span>其他</span></li>
+        </ul>
+        <div id="yx_acceptCount" class="accept_decorate_list">
+
+        </div>
+    </section>
+</body>
+<script src="./static/js/jquery.min.js"></script>
+<script src="./static/js/ShopFooter.js"></script>
+<script>
+    // 切换选项卡事件
+    $('.list-tab li').on('click', function () {
+        $('.list-tab li').removeClass('active');
+        $(this).addClass('active');
+        if ($(this).text() == "待验收") {
+            $("#yx_acceptCount").empty().append(needHtmls ? needHtmls : noinfo);
+        } else {
+            $("#yx_acceptCount").empty().append(finishedHtmls ? finishedHtmls : noinfo);
+        }
+    });
+
+    var needHtmls = ""; // 待验收
+    var finishedHtmls = ""; // 其他
+    var noinfo = '<p class="no-info">暂无记录</p>';
+
+    function init() {
+        var result = [
+            {
+                id: 1,
+                houseNo: '1-1-1',
+                time: jsonDateFormatM(1),
+                status: '待验收',
+            },
+            {
+                id: 2,
+                houseNo: '1-12-1',
+                time: jsonDateFormatM(2),
+                status: '待验收',
+            },
+            {
+                id: 3,
+                houseNo: '2-3-2',
+                time: jsonDateFormatM(3),
+                status: '待验收',
+            },
+            {
+                id: 4,
+                houseNo: '1-1-1',
+                time: jsonDateFormatM(3),
+                status: '验收中',
+            },
+            {
+                id: 5,
+                houseNo: '6-3-4',
+                time: jsonDateFormatM(1),
+                status: '验收中',
+            },
+            {
+                id: 6,
+                houseNo: '4-7-4',
+                time: jsonDateFormatM(1),
+                status: '申请不通过',
+            },
+            {
+                id: 7,
+                houseNo: '5-6-1',
+                time: jsonDateFormatM(2),
+                status: '申请不通过',
+            },
+            {
+                id: 8,
+                houseNo: '5-13-2',
+                time: jsonDateFormatM(3),
+                status: '待验收',
+            },
+            {
+                id: 9,
+                houseNo: '5-9-3',
+                time: jsonDateFormatM(3),
+                status: '待验收',
+            }
+        ];
+
+        var order = 0;
+        for (var i = 0; i < result.length; i++) {
+            order++;
+            var html = '';
+            html += ' <div class="accept_decorate_list_all">';
+            html += ' <div class="accept_decorate_list_all_left" style="min-width:0.8rem">' + result[i].houseNo + '</div>';
+            html += ' <div class="accept_decorate_list_all_time">' + result[i].time + '</div>';
+            if (result[i].status == "待验收") {
+                html += ' <div class="accept_decorate_list_all_right"><a href="startAccept.html?id=' + result[i].id + '"><div class="accept_btn">' + result[i].status + '</div></a></div>';
+            }
+            else if (result[i].status == "验收中") {
+                html += ' <div class="accept_decorate_list_all_right"><a href="startAccept.html?id=' + result[i].id + '"><div class="accept_btn">' + result[i].status + '</div></a></div>';
+            } else if (result[i].status == "申请不通过") {
+                html += ' 	<div class="accept_decorate_list_all_cue">违章</div>';
+                html += ' <div class="accept_decorate_list_all_right"><div class="accept_btn t_color">' + result[i].status + '</div></div>';
+            } else {
+                html += ' <div class="accept_decorate_list_all_right"><div class="accept_btn_t_color2">' + result[i].status + '</div></div>';
+            }
+            html += ' </div>';
+
+            // 将数据分成两组Htmls
+            if (result[i].status == "待验收") {
+                needHtmls += html;
+            } else {
+                finishedHtmls += html;
+            }
+        }
+        $("#yx_acceptCount").append(needHtmls ? needHtmls : noinfo)
+    }
+
+    function getRecordListHtml() {
+        window.location.href = "getRecordList.html";
+    }
+
+
+    init();
+</script>
+
+</html>
