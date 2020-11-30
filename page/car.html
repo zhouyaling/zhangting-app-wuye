@@ -7,47 +7,57 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./static/css/car-common.css">
     <link rel="stylesheet" href="./static/css/car-index.css">
+    <link rel="stylesheet" href="static/css/style.css" />
+	<link rel="stylesheet" href="static/css/common.css" />
+	<link rel="stylesheet" href="static/css/frozen.css">
+
     <title>车辆管理</title>
 </head>
 
-<body>
-    <div class="page">
-        <div class="views">
-            <div class="form-box">
-                <div class="title">请输入您的车牌号</div>
-                <!-- 车牌号 -->
-                <div class="car_input">
-                    <ul class="clearfix ul_input">
-                        <li class="input_pro hasPro"><span>渝A</span></li>
-                        <li class="input_pp input_zim"><span></span></li>
-                        <li class="input_pp"><span></span></li>
-                        <li class="input_pp"><span></span></li>
-                        <li class="input_pp"><span></span></li>
-                        <li class="input_pp"><span></span></li>
-                        <li class="input_pp spec-text"><span>新能源</span></li>
-                    </ul>
-                </div>
-
-                <!-- 历史记录 -->
-                <div class="history-box">
-                    <div>
-                        <img class="icon" src="./static/img/icon-time.png" alt /><span>历史记录</span>
+<body  ontouchstart="">
+    <header class="ui-header ui-header-positive ui-border-b">
+        <i class="ui-icon-return" onclick="history.go(-1)"></i>
+        <h1>车辆管理</h1>
+    </header>
+    <section class="ui-container">
+        <div class="page1">
+            <div class="views">
+                <div class="form-box">
+                    <div class="title">请输入您的车牌号</div>
+                    <!-- 车牌号 -->
+                    <div class="car_input">
+                        <ul class="clearfix ul_input">
+                            <li class="input_pro hasPro"><span>渝A</span></li>
+                            <li class="input_pp input_zim"><span></span></li>
+                            <li class="input_pp"><span></span></li>
+                            <li class="input_pp"><span></span></li>
+                            <li class="input_pp"><span></span></li>
+                            <li class="input_pp"><span></span></li>
+                            <li class="input_pp spec-text"><span>新能源</span></li>
+                        </ul>
                     </div>
-                    <div id="numberList"></div>
+
+                    <!-- 历史记录 -->
+                    <div class="history-box">
+                        <div>
+                            <img class="icon" src="./static/img/icon-time.png" alt /><span>历史记录</span>
+                        </div>
+                        <div id="numberList"></div>
+                    </div>
+
+                    <!-- 按钮 -->
+                    <div class="form-btn" onclick="search()">查询</div>
                 </div>
 
-                <!-- 按钮 -->
-                <div class="form-btn" onclick="search()">查询</div>
-            </div>
-
-            <!-- 车牌弹窗 -->
-            <div id="panel" class="panel">
-                <div id="panelBox" class="panel-box">
+                <!-- 车牌弹窗 -->
+                <div id="panel" class="panel">
+                    <div id="panelBox" class="panel-box">
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
+    </section>
 
 </body>
 <!-- 车牌历史记录模板-->

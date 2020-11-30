@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>电子发票</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+	<meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="static/css/fapiao-common.css">
+	<link rel="stylesheet" href="static/css/fapiao-add.css">
+	<link rel="stylesheet" href="static/css/frozen.css">
+</head>
+
+<body ontouchstart="">
+	<header class="ui-header ui-header-positive ui-border-b">
+		<i class="ui-icon-return" onclick="history.back()"></i>
+		<h1>电子发票</h1>
+	</header>
+	<section class="ui-container">
+		<div class="news"><img src="static/img/icon-news.png" alt=""> 开票时间为工作日 8:30 — 18:00</div>
+		<div class="card-list">
+			<div class="card-item" onclick="invoiceChoose()">
+				<img src="static/img/icon-add.png" alt="">
+				<p>开具发票</p>
+			</div>
+			<div class="card-item" onclick="invoiceHistory()">
+				<img src="static/img/icon-history.png" alt="">
+				<p>开票历史</p>
+			</div>
+		</div>
+	</section>
+</body>
+<script>
+    var houseId = GetUrlParam('houseId') ? GetUrlParam('houseId') : "1"; // 房屋ID
+
+    // 开票
+    function invoiceChoose() {
+        window.location.href = "choose.html?houseId=" + houseId;
+    }
+
+    // 开票历史
+    function invoiceHistory() {
+        window.location.href = "history.html?houseId=" + houseId;
+    }
+</script>
+</html>

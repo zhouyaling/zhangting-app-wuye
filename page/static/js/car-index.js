@@ -35,7 +35,7 @@ function showKeybord() {
     for (var i = 0; i < _this.keyNums.length; i++) {
         var item = '<span onclick="choosekey(this,' + i + ');">' + _this.keyNums[i] + '</span>';
         if (i == 29) {
-            item = '<span  onclick="choosekey(this,' + i + ');"><img class="del-icon" src="./images/icon-big-close.png"/></span>';
+            item = '<span  onclick="choosekey(this,' + i + ');"><img class="del-icon" src="./static/img/icon-big-close.png"/></span>';
         }
         sss = sss + '<li class="ikey ikey' + i + ' ' + (i > 9 ? "li_zm" : "li_num") + ' ' + (i > 29 ? "li_w" : "") + '" >' + item + '</li>'
     }
@@ -46,7 +46,7 @@ function showKeybord() {
 function addKeyProvince(provinceIds) {
     var item = '<span onclick="chooseProvince(this);">' + _this.provinces[provinceIds] + '</span>';
     if (provinceIds == 26) {
-        item = '<span  onclick="cleanPro()"><img class="del-icon" src="./images/icon-big-close.png"/></span>';
+        item = '<span  onclick="cleanPro()"><img class="del-icon" src="./static/img/icon-big-close.png"/></span>';
     } else {
 
     }

@@ -1,0 +1,801 @@
+/* 开具电子发票页面样式 start*/
+
+.wrap {
+    padding-bottom: 0.8rem;
+}
+
+.w-title {
+    font-size: 0.13rem;
+    color: #999999;
+    padding: 0.06rem 5%;
+}
+
+.w-form {
+    width: 100%;
+}
+
+.w-form-item {
+    border-bottom: 1px solid #EEEEEE;
+    padding: 0.12rem 4.5%;
+    display: flex;
+    align-items: center;
+    background: #fff;
+}
+
+.w-form-item:last-of-type {
+    border-bottom: none;
+}
+
+.form-label {
+    font-weight: 700;
+    font-size: 0.16rem;
+    color: #4B4B4B;
+    text-align: left;
+    min-width: 0.8rem;
+    width: 22%;
+    overflow: hidden;
+}
+
+.label-spec {
+    width: 80%;
+}
+
+.label-sub {
+    font-size: 0.13rem;
+    color: #AEAEAE;
+    text-align: left;
+    font-weight: normal;
+}
+
+.label-value {
+    width: 78%;
+    font-size: 0.15rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.label-value span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.label-value label {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    position: relative;
+}
+
+.label-value label:last-child {
+    margin-right: 0;
+}
+
+.label-value input[type="radio"] {
+    opacity: 0;
+    width: 1.6rem;
+    height: 1.6rem;
+    margin: 0 0.5rem;
+}
+
+.label-value input {
+    width: 100%;
+}
+
+.spec-label {
+    width: 100%;
+    position: relative;
+}
+
+.spec-label span {
+    display: block;
+}
+
+.spec-label span:nth-of-type(1) {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #4B4B4B;
+    display: inline-block;
+}
+
+.spec-label span:nth-of-type(2) {
+    font-size: 0.13rem;
+    color: #AEAEAE;
+    margin-top: 0.3rem;
+}
+
+.spec-value {
+    width: 25%;
+    font-size: 0.13rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.label-detail {
+    font-size: 1.4rem;
+    color: #A4A4A4;
+    padding-right: 1.2rem;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    display: block;
+}
+
+.label-detail::after {
+    content: "";
+    width: 0.7rem;
+    height: 0.13rem;
+    position: absolute;
+    background: url(../img/arrow-right.png) no-repeat 0;
+    background-size: 100%;
+    right: 0;
+    bottom: 0.3rem;
+}
+
+.show-panel {
+    display: block!important;
+    animation: showp 0.2s linear 1;
+}
+
+@keyframes showp {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+
+/* 开具电子发票页面样式 end*/
+
+
+/* 开具电子发票详情页面 start*/
+
+.card {
+    width: 90%;
+    margin: 5% 5%;
+    background: #fff;
+    /*  box-shadow: 0px -3px 9px rgba(0, 0, 0, 0.08); */
+    border-radius: 0.4rem;
+    padding: 2.5rem 0;
+    position: relative;
+}
+
+.card-title {
+    font-size: 1.7rem;
+    color: #4B4B4B;
+    text-align: center;
+}
+
+.total-money {
+    font-size: 2rem;
+    color: #0297FE;
+    text-align: center;
+}
+
+.total-money span {
+    font-size: 3rem;
+}
+
+.info-detail {
+    border-top: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+    margin: 0.24rem 5%;
+    padding-bottom: 2rem;
+}
+
+.info-detail li {
+    margin-top: 0.18rem;
+    padding: 0px 2.5%;
+}
+
+.info-detail li span:nth-of-type(1) {
+    font-size: 0.15rem;
+    color: #4B4B4B;
+    font-weight: 700;
+    display: inline-block;
+    text-align: left;
+    max-width: 72%;
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; */
+}
+
+.info-detail li span:nth-of-type(2) {
+    font-size: 0.15rem;
+    color: #676767;
+    float: right;
+    text-align: right;
+    max-width: 30%;
+    font-weight: 700;
+    /*    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; */
+}
+
+.sub-info-detail {
+    margin: 0.24rem 5%;
+    padding: 0px 2.5%;
+}
+
+.sub-info-detail span:nth-of-type(1) {
+    font-size: 0.15rem;
+    color: #4B4B4B;
+    font-weight: 700;
+}
+
+.sub-info-detail span:nth-of-type(2) {
+    font-size: 0.15rem;
+    color: #676767;
+    float: right;
+    display: block;
+    text-align: right;
+    max-width: 80%;
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; */
+}
+
+.spec-company {
+    float: left;
+    text-align: left;
+    font-weight: normal!important;
+}
+
+.wave {
+    position: absolute;
+    z-index: 5;
+    bottom: -1rem;
+    left: 0;
+    transform-origin: center left;
+    /*  transform: rotate(90deg); */
+    width: 100%;
+    height: 0.18rem;
+    background-image: radial-gradient(circle, #F4F4F5, #F4F4F5 7px, transparent 0px, transparent 4px, transparent 44px, transparent);
+    background-size: 0.18rem 0.18rem;
+    background-repeat: repeat-x;
+}
+
+
+/* 开具电子发票详情页面 end*/
+
+
+/* 确认提交弹窗样式 start*/
+
+.panel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+}
+
+.panel-card {
+    width: 78%;
+    min-height: 50%;
+    padding: 0 6%;
+    background: #fff;
+    border-radius: 0.04rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.panel-colse {
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url(../img/close.png) no-repeat center;
+    background-size: 1.2rem auto;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 1;
+}
+
+.panel-title {
+    width: 100%;
+    height: 0.33rem;
+    font-size: 0.22rem;
+    color: #9D3A29;
+    letter-spacing: 0;
+    text-align: center;
+    background: url(../img/invoice-seal.png) no-repeat center;
+    background-size: auto 3.3rem;
+    margin: 0.25rem 0;
+}
+
+.panel-btn {
+    width: 100% !important;
+    margin: 0.25rem 0!important;
+}
+
+.panel-form li {
+    margin-bottom: 0.3rem;
+}
+
+.panel-form-label {
+    font-weight: 700;
+    font-size: 0.16rem;
+    color: #4B4B4B;
+    text-align: left;
+    width: 0.8rem;
+    display: block;
+    float: left;
+}
+
+.panel-form-value {
+    display: block;
+    font-size: 0.15rem;
+    color: #676767;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.spec {
+    display: none;
+}
+
+.attention-box {
+    font-size: 0.13rem;
+    color: #878787;
+    border-top: 1px solid #EEEEEE;
+}
+
+.attention-box .attention {
+    display: none;
+}
+
+.attention-box p {
+    padding-top: 0.1rem;
+}
+
+
+/* 确认提交弹窗样式 end*/
+
+
+/* 提交结果页面样式 start */
+
+.result-message {
+    padding-top: 19%;
+    padding-bottom: 24%;
+}
+
+.result-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.result-icon img {
+    width: 1.03rem;
+    height: 1.03rem;
+    display: none;
+    margin-bottom: 0.3rem;
+}
+
+.result-icon p {
+    font-size: 0.2rem;
+    color: #4B4B4B;
+    text-align: center;
+    margin-top: -0.2rem;
+    display: none;
+    /* font-weight: 700; */
+}
+
+.success-btn {
+    width: 78%;
+    margin: 0 11%;
+    height: 0.43rem;
+    display: block;
+    line-height: 0.43rem;
+    display: none;
+}
+
+.primary-btn {
+    width: 78%;
+    margin: 0 11%;
+    height: 0.41rem;
+    background: #fff!important;
+    border: 1px solid #0297FE;
+    color: #0297FE;
+    margin-top: 0.26rem;
+    display: block;
+    line-height: 0.41rem;
+}
+
+
+/* 提交结果页面样式 end */
+
+
+/* 缴费比数明细页面样式 start */
+
+.list-item-box {
+    width: 100%;
+    background: #fff;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 5%;
+    border-bottom: 0.01rem solid #EEEEEE;
+    /* padding: 3.5% 5% 3.5% 0; */
+    padding: 0.22rem 5% 0.2rem 0;
+}
+
+.list-item-label {
+    float: left;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+}
+
+.list-item-label span:nth-of-type(1) {
+    font-size: 0.15rem;
+    color: #959595;
+}
+
+.list-item-label span:nth-of-type(2) {
+    font-size: 0.15rem;
+    color: #333333;
+    margin-top: 0.05rem;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.list-item-money {
+    float: right;
+    font-size: 0.14rem;
+    width: 40%;
+    text-align: right;
+    color: #565656;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.list-item-money .arrow-action {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.list-item-money .arrow-action img {
+    width: 0.07rem;
+    height: auto;
+    margin-left: 0.08rem;
+    margin-top: 0.01rem;
+}
+
+.list-item:last-child {
+    border-bottom: none;
+}
+
+.list-item-action {
+    width: 0.35rem;
+    height: 0.44rem;
+    position: relative;
+}
+
+
+/* 缴费比数明细页面样式 end */
+
+
+/* 电子发票预览 start */
+
+.container .pinch-zoom-container {
+    height: 80%!important;
+    position: relative;
+    top: 0%;
+    /* transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%); */
+}
+
+.iframe-box {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+.iframe-box iframe {
+    width: 100%;
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+.img-box {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    top: 10%;
+}
+
+.img-box img {
+    width: 100%;
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+.save-pic {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    color: #fff;
+    border: 1px solid #979797;
+    border-radius: 0.03rem;
+    padding: 0.5rem 0.15rem;
+    z-index: 2;
+}
+
+
+/* 电子发票预览 end */
+
+
+/* 开具电子发票入口页面 start */
+
+.news {
+    font-size: 0.11rem;
+    color: #FF344D;
+    text-align: left;
+    background: #FFDBDF;
+    display: flex;
+    align-items: center;
+    padding: 0.08rem 0;
+}
+
+.news img {
+    width: 0.14rem;
+    height: auto;
+    margin: 0 0.8rem 0 0.18rem;
+}
+
+.card-list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.card-list .card-item {
+    width: 50%;
+    margin: 0.17rem 0.17rem 0 0.17rem;
+    padding: 0.42rem 0;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 0.04rem;
+}
+
+.card-list .card-item img {
+    width: 0.52rem;
+}
+
+.card-list .card-item:last-of-type {
+    margin-left: 0rem;
+}
+
+.card-list .card-item p {
+    font-size: 0.17rem;
+    color: #333333;
+    margin-top: 0.22rem;
+}
+
+.house-info {
+    padding: 0.2rem 0 0.2rem 0.2rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 0.08rem solid #F4F4F5;
+}
+
+.house-info img {
+    width: 0.26rem;
+    height: auto;
+    margin-right: 0.01rem;
+}
+
+.house-info .house-name {
+    font-size: 0.17rem;
+    color: #333333;
+    font-weight: 700;
+}
+
+.choose-bottom {
+    background: #F4F4F5;
+    width: 100%;
+    height: 0.64rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+}
+
+.next-btn {
+    display: inline-block;
+    color: #ffffff;
+    background: #0297FE;
+    border-radius: 0.21rem;
+    padding: 0.08rem 0.28rem;
+    font-size: 0.17rem;
+    letter-spacing: 0.09rem;
+    position: absolute;
+    right: 0.17rem;
+    top: 50%;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.next-btn.gray-btn {
+    background: #C6C6CC!important;
+}
+
+.choose-bottom p {
+    font-size: 0.15rem;
+    color: #333333;
+    margin-left: 0.15rem;
+    display: flex;
+    align-items: center;
+}
+
+.choose-text {
+    display: inline-block;
+    margin: 0 0.05rem 0 0.15rem;
+}
+
+.choose-total {
+    font-size: 0.18rem;
+    color: #0297FE;
+    display: inline-block;
+    margin: 0 0.05rem;
+    /* font-weight: 700; */
+}
+
+.no-info {
+    width: 100%;
+    text-align: center;
+}
+
+.no-info img {
+    width: 1.4rem;
+    height: auto;
+    margin: 0.05rem 0 0.03rem 0;
+}
+
+.no-info p {
+    font-size: 0.16rem;
+    color: #967070;
+    letter-spacing: 0;
+}
+
+.no-info .go-btn {
+    font-size: 0.17rem;
+    color: #0297FE;
+    letter-spacing: 0.09rem;
+    text-align: center;
+    border: 0.01rem solid #0297FE;
+    border-radius: 0.4rem;
+    padding: 0.8rem 0.27rem;
+    margin-top: 0.9rem;
+    display: inline-block;
+}
+
+
+/* 开具电子发票入口页面 end */
+
+
+/* 
+@media(max-width:320px) {
+    .form-label {
+        min-width: 7.6rem;
+    }
+    .label-value label {
+        margin-right: 0.4rem;
+    }
+    .label-value input[type="radio"] {
+        margin: 0 0.2rem;
+    }
+    .w-form-item-spec {
+        padding: 1.2rem 0 1.2rem 4.5%;
+    }
+    .panel-title {
+        margin: 0.18rem 0;
+    }
+    .panel-form li {
+        margin-bottom: 2rem;
+    }
+    .panel-btn {
+        margin: 0.18rem 0!important;
+    }
+    .panel-card {
+        transform: translate(-50%, -55%);
+        -ms-transform: translate(-50%, -55%);
+        -moz-transform: translate(-50%, -55%);
+        -webkit-transform: translate(-50%, -55%);
+        -o-transform: translate(-50%, -55%);
+    }
+}
+
+@media(min-width:414px) {
+    .attention-box p {
+        padding-top: 0.15rem;
+    }
+    .result-message {
+        padding-top: 25%;
+        padding-bottom: 29%;
+    }
+    .panel-card {
+        width: 75%;
+        min-height: 48%;
+    }
+} */
+
+
+/* iphone X */
+
+/* @media(min-height:812px) {
+    .attention-box p {
+        padding-top: 0.15rem;
+    }
+    .panel-card {
+        min-height: 45%;
+    }
+} */
+
+
+/* 处理不同分辨率 end*/

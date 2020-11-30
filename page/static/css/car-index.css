@@ -1,9 +1,9 @@
 .form-box {
-  margin: 3.7rem 7% 0 7%;
+  margin: 0.37rem 7% 0 7%;
 }
 
 .title {
-  font-size: 1.6rem;
+  font-size: 0.16rem;
   color: #272727;
   letter-spacing: 0;
   font-weight: 600;
@@ -13,11 +13,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 2.2rem 0 2.2rem 0;
+  margin: 0.22rem 0 0.22rem 0;
 }
 
 .normal-text {
-  font-size: 1.8rem !important;
+  font-size: 0.18rem !important;
   color: #272727 !important;
   font-weight: 600 !important;
 }
@@ -26,11 +26,11 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-bottom: 3.2rem;
+  margin-bottom: 0.32rem;
 }
 
 .history-box>div:nth-of-type(1) {
-  font-size: 1.2rem;
+  font-size: 0.12rem;
   color: #4591fd;
   letter-spacing: 0;
   text-align: left;
@@ -39,8 +39,8 @@
 }
 
 .history-box>div .icon {
-  width: 1.2rem;
-  margin-right: 0.5rem;
+  width: 0.12rem;
+  margin-right: 0.05rem;
 }
 
 .history-numbers {
@@ -52,14 +52,14 @@
 
 .history-item {
   display: inline-block;
-  font-size: 1rem;
+  font-size: 0.1rem;
   color: #272727;
   letter-spacing: 0;
   text-align: left;
-  padding: 0.4rem 2.5rem 0.5rem 1rem;
+  padding: 0.04rem 0.25rem 0.05rem 0.1rem;
   background: #f3f3f3;
-  border-radius: 1.5rem;
-  margin-left: 1.5rem;
+  border-radius: 0.15rem;
+  margin-left: 0.15rem;
   position: relative;
   -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -68,14 +68,14 @@
 }
 
 .history-item img {
-  width: 1.2rem;
+  width: 0.12rem;
   position: absolute;
-  right: 0.5rem;
-  top: 0.6rem;
+  right: 0.05rem;
+  top: 0.06rem;
 }
 
 .code-input-input {
-  height: 3.6rem;
+  height: 0.36rem;
   position: absolute;
   outline: none;
   color: transparent;
@@ -100,14 +100,14 @@
 }
 
 .code-input-main-item {
-  border-radius: 0.4rem;
+  border-radius: 0.04rem;
   background-color: #f3f3f3;
-  height: 3.6rem;
+  height: 0.36rem;
   width: 14.5%;
-  min-width: 3rem;
-  line-height: 3.6rem;
+  min-width: 0.03rem;
+  line-height: 0.36rem;
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 0.18rem;
   color: #272727;
   letter-spacing: 0;
   font-weight: 600;
@@ -115,7 +115,7 @@
 
 .spec-text {
   position: relative;
-  font-size: 0.7rem !important;
+  font-size: 0.07rem !important;
   font-weight: normal !important;
   color: #b6b3b3 !important;
 }
@@ -123,7 +123,7 @@
 
 .spec-text span {
   position: relative;
-  font-size: 0.7rem !important;
+  font-size: 0.07rem !important;
   font-weight: normal !important;
   color: #b6b3b3 !important;
 }
@@ -131,10 +131,10 @@
 .car-area {
   border: 1px solid #dbdbdb;
   width: 17.5%;
-  border-radius: 0.4rem;
-  height: 3.6rem;
+  border-radius: 0.04rem;
+  height: 0.36rem;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 0.15rem;
   color: #272727;
   letter-spacing: 0;
   font-weight: 500;
@@ -143,16 +143,16 @@
   z-index: 1;
   display: flex;
   align-items: center;
-  padding-left: 0.6rem;
+  padding-left: 0.06rem;
 }
 
 .car-area::before {
   content: "";
   position: absolute;
-  right: 0.5rem;
-  top: 1.4rem;
-  width: 1rem;
-  height: 0.7rem;
+  right: 0.05rem;
+  top: 0.14rem;
+  width: 0.1rem;
+  height: 0.07rem;
   background-image: url(../img/icon-down.png);
   background-position: center;
   background-size: 100% auto;
@@ -163,25 +163,25 @@
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
-  padding: 2rem 1.4rem;
+  padding: 0.2rem 0.14rem;
 }
 
 .click-item {
   display: inline-block;
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 0.4rem;
-  margin: 0.35rem;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 0.04rem;
+  margin: 0.035rem;
   border: 1px solid #ccc;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
+  font-size: 0.14rem;
   color: #404040;
 }
 
 .click-item.active {
-  border: 1px solid rgba(255, 67, 106, 1);
+  border: 0.01rem solid rgba(255, 67, 106, 1);
 }
 
 /* 车辆信息详情页面 */
@@ -191,15 +191,15 @@
 
 .form-item {
   list-style: none;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 0.01rem solid #e6e6e6;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  margin-top: 3rem;
+  margin-top: 0.3rem;
 }
 
 .form-label {
-  font-size: 1.6rem;
+  font-size: 0.16rem;
   color: #272727;
   letter-spacing: 0;
   font-weight: 600;
@@ -215,23 +215,23 @@
   width: 100%;
   font-size: 1.5rem;
   color: #404040;
-  margin: 0.4rem 0 0 0;
-  padding: 0.8rem 0;
+  margin: 0.04rem 0 0 0;
+  padding: 0.08rem 0;
   border: none;
   outline-style: none;
 }
 
 .form-value {
-  min-height: 3.6rem;
+  min-height: 0.36rem;
   display: block;
-  margin: 0.4rem 0 0 0;
-  padding: 0.8rem 0;
-  font-size: 1.5rem;
+  margin: 0.04rem 0 0 0;
+  padding: 0.08rem 0;
+  font-size: 0.15rem;
   letter-spacing: 0;
 }
 
 .form-value.spec {
-  font-size: 1.8rem;
+  font-size: 0.18rem;
   color: #ff3a3a;
   font-weight: 600;
 }
@@ -239,23 +239,23 @@
 .refresh {
   position: absolute;
   right: 0;
-  bottom: 0.8rem;
-  width: 6.5rem;
-  height: 2.5rem;
+  bottom: 0.08rem;
+  width: 0.65rem;
+  height: 0.25rem;
   background: url(../img/icon-refresh.png) no-repeat center;
   background-size: 100% 100%;
 }
 
 .btn-box {
-  margin: 6.9rem 7% 0 7%;
+  margin: 0.69rem 7% 0 7%;
 }
 
 .sub-title {
-  font-size: 1.2rem;
+  font-size: 0.12rem;
   color: #c0c0c0;
   letter-spacing: 0;
   text-align: center;
-  margin-bottom: 2.3rem;
+  margin-bottom: 0.23rem;
 }
 
 /* 新键盘输入样式 */
@@ -286,20 +286,20 @@
 
 .che_tit {
   text-align: center;
-  padding: 20px;
+  padding: 0.2rem;
 }
 
 .ul_pro {
   background-color: #F3F3F3;
   text-align: center;
-  padding: 4px 2px;
+  padding: 0.04rem 0.02rem;
 
 }
 
 .ul_pro li {
   float: left;
   width: 11.11%;
-  padding: 2px;
+  padding: 0.02rem;
   box-sizing: border-box;
 }
 
@@ -320,13 +320,13 @@
 .ul_pro li span {
   display: block;
   background-color: #fff;
-  border-radius: 0.3rem;
+  border-radius: 0.03rem;
   /* box-shadow: 2px 2px 2px #888888; */
   /* max-width:48px; margin:0 auto; */
-  line-height: 4rem;
-  padding-top: 2px;
+  line-height: 0.4rem;
+  padding-top: 0.02rem;
   font-weight: 500;
-  font-size: 1.7rem;
+  font-size: 0.17rem;
 }
 
 .ul_pro li span:active {
@@ -335,7 +335,7 @@
 }
 
 .ul_input {
-  padding: 20px 0;
+  padding: 0.2rem 0;
   width: 100%;
   margin: 0 auto;
 }
@@ -364,10 +364,10 @@
 .ul_input li:nth-of-type(1) span::after {
   content: "";
   position: absolute;
-  right: 0.5rem;
-  top: 1.5rem;
-  width: 1rem;
-  height: 0.7rem;
+  right: 0.05rem;
+  top: 0.15rem;
+  width: 0.1rem;
+  height: 0.07rem;
   background-image: url(../img/icon-down.png);
   background-position: center;
   background-size: 100% auto;
@@ -376,12 +376,12 @@
 .ul_input li span {
   display: block;
   background-color: #f3f3f3;
-  border-radius: 0.4rem;
+  border-radius: 0.04rem;
   width: 100%;
   margin: 0 auto;
-  height: 3.6rem;
-  line-height: 3.6rem;
-  font-size: 1.8rem;
+  height: 0.36rem;
+  line-height: 0.36rem;
+  font-size: 0.18rem;
   color: #272727;
   letter-spacing: 0;
   font-weight: 600;
@@ -389,10 +389,10 @@
 
 .ul_input li:nth-of-type(1) span {
   background-color: #fff !important;
-  border: 1px solid #DBDBDB;
+  border: 0.01rem solid #DBDBDB;
   text-align: left;
-  padding-left: 0.6rem;
-  font-size: 1.5rem;
+  padding-left: 0.06rem;
+  font-size: 0.15rem;
   letter-spacing: 0;
   font-weight: 500;
 }
@@ -400,14 +400,14 @@
 .ul_keybord {
   background-color: #F3F3F3;
   text-align: center;
-  padding: 4px 2px;
-  font-size: 14px;
+  padding: 0.04rem 0.02rem;
+  font-size: 0.14rem;
 }
 
 .ul_keybord li {
   float: left;
   width: 10%;
-  padding: 0.2rem;
+  padding: 0.02rem;
   box-sizing: border-box;
 }
 
@@ -421,7 +421,7 @@
 
 .ul_keybord .ikey37 span {
   background-image: linear-gradient(to right, #ff746d 2%, #ff436a 100%);
-  box-shadow: 0 2px 8px 0 rgba(255, 70, 108, 0.39);
+  box-shadow: 0 0.02rem 0.08rem 0 rgba(255, 70, 108, 0.39);
 }
 
 .ul_keybord .li_w {
@@ -445,13 +445,13 @@
 .ul_keybord li span {
   display: block;
   background-color: #fff;
-  border-radius: 0.3rem;
+  border-radius: 0.03rem;
   /* box-shadow: 2px 2px 2px #888888; */
   /* max-width:48px; margin:0 auto; */
-  line-height: 4.5rem;
-  padding-top: 0.2rem;
+  line-height: 0.45rem;
+  padding-top: 0.02rem;
   font-weight: 500;
-  font-size: 1.7rem;
+  font-size: 0.17rem;
   color: #272727;
   letter-spacing: 0;
   text-align: center;
@@ -465,5 +465,5 @@
 .del-icon {
   width: 75%;
   position: relative;
-  top: 0.5rem;
+  top: 0.05rem;
 }

@@ -1,0 +1,180 @@
+@charset "utf-8";
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    overflow: hidden;
+    /*overflow-y: scroll*/
+    ;
+    display: block;
+    background: #F4F4F5;
+    color: #676767;
+    list-style-type: none;
+    font-size: 10px;
+    font-family: "PingFang", "Microsoft Yahei", Arial;
+    height: 100%;
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    color: inherit;
+}
+
+a:hover,
+a:active,
+a:visited,
+a:link,
+a:focus {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+ul li {
+    list-style: none;
+}
+
+input {
+    border: none;
+    outline: none;
+    color: #676767;
+    font-size: 0.15rem;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+}
+
+.btn {
+    min-width: 60%;
+    height: 0.48rem;
+    line-height: 0.48rem;
+    background: #0297FE;
+    border-radius: 0.04rem;
+    font-size: 0.17rem;
+    color: #FFFFFF;
+    letter-spacing: 0.09rem;
+    text-align: center;
+}
+
+.btn-icon {
+    width: 0.16rem;
+    height: 0.21rem;
+    position: relative;
+    top: 0.04rem;
+    right: 0.04rem;
+}
+
+.footer {
+    position: fixed;
+    bottom: 1.6%;
+    width: 100%;
+}
+
+.footer-btn {
+    width: 93%;
+    margin: 0 3.5%;
+}
+
+.back-white {
+    background: #fff;
+}
+
+.back-black {
+    background: #000;
+}
+
+.color-red {
+    color: #FF364F!important;
+}
+
+.font-size-18 {
+    font-size: 0.18rem;
+}
+
+.font-size-22 {
+    font-size: 0.22rem;
+}
+
+.radio-checked {
+    position: absolute;
+    left: 0;
+    top: 0rem;
+    width: 0.2rem;
+    height: 0.2rem;
+    background: url(../img/radio-checked.png) no-repeat center;
+    background-size: 0.2rem auto;
+    display: none;
+}
+
+.radio-uncheck {
+    position: absolute;
+    left: 0;
+    top: 0rem;
+    width: 0.2rem;
+    height: 0.2rem;
+    background: url(../img/radio-uncheck.png) no-repeat center;
+    background-size: 0.2rem auto;
+}
+
+.display-block {
+    display: block!important;
+}
+
+.display-hide {
+    display: none!important;
+}
+
+.panel-bolang {
+    position: absolute;
+    z-index: 5;
+    bottom: -0.11rem;
+    left: 0;
+    transform-origin: center left;
+    /* transform: rotate(90deg); */
+    width: 100%;
+    height: 0.18rem;
+    background-image: radial-gradient(circle, #626262, #626262 7px, transparent 0px, transparent 0px, transparent 0px, transparent);
+    background-size: 0.18rem 0.18rem;
+    background-repeat: repeat-x;
+}
+
+.alert {
+    background: rgba(0, 0, 0, 0.70);
+    border-radius: 0.1rem;
+    font-size: 0.16rem;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 0.2rem 4%;
+    position: absolute;
+    top: 40%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    min-width: 1.2rem;
+}

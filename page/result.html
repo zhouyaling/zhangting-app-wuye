@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="static/css/fapiao-common.css">
+    <link rel="stylesheet" href="static/css/fapiao-add.css">
+    <link rel="stylesheet" href="static/css/frozen.css">
+    <title>开具电子发票</title>
+</head>
+
+<body>
+    <div class="container back-white">
+        <div class="result-message">
+            <div class="result-icon">
+                <img class="success-mark" src="static/img/icon-success.png" alt="">
+                <img class="fail-mark" src="static/img/icon-fail.png" alt="">
+                <p class="success-mark">提交成功</p>
+                <p class="fail-mark">数据异常，提交失败</p>
+            </div>
+
+        </div>
+        <div>
+            <div class="btn success-btn" onclick="goAdd()">开具发票</div>
+            <div class="btn primary-btn" onclick="goHistory()">开票历史</div>
+        </div>
+    </div>
+    </div>
+</body>
+<script src="static/js/jquery.min.js"></script>
+<script>
+    $('.success-mark').addClass('display-block');
+    $('.fail-mark').removeClass('display-block');
+    $('.success-btn').addClass('display-block');
+
+    function goAdd() {
+        window.location.href = "fapiao.html?houseId=";
+    }
+
+    function goHistory() {
+        window.location.href = "history.html?houseId=";
+    }
+</script>
+
+</html>

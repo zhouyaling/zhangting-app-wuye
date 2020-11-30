@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="static/css/fapiao-common.css">
+    <link rel="stylesheet" href="static/css/fapiao-add.css">
+    <link rel="stylesheet" href="static/css/frozen.css">
+    <title>开具电子发票</title>
+</head>
+
+<body>
+    <header class="ui-header ui-header-positive ui-border-b">
+        <i class="ui-icon-return" onclick="history.back()"></i>
+        <h1>开具电子发票</h1>
+    </header>
+    <section class="ui-container" style="height:100%;">
+        <div class="container back-white">
+            <div class="house-info">
+                <img src="static/img/icon-house.png" alt="">
+                <div class="house-name"></div>
+            </div>
+            <div class="list-item-box" id="list">
+            </div>
+            <div class="no-info">
+                <img src="static/img/icon-no.png" alt="">
+                <p>您已开具收据,
+                    <br />如需发票请联系小区客服管家。</p>
+            </div>
+
+            <div class="choose-bottom display-hide">
+                <p><span class="choose-total color-red" id="total-number">0</span>笔缴费 <span class="choose-text">共</span><span
+                        class="color-red">¥</span><span class="choose-total color-red" id="toatl-money">0.00</span></p>
+                <div class="next-btn gray-btn" onclick="next()">下一步</div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/ShopFooter.js"></script>
+<script>
+
+    function getEnableDataList() {
+        var htmls = "";
+        var data = [
+            {
+                id: 1,
+                enableAmount: 131,
+                payDate: jsonDateFormat(2),
+                totalAmount: 131
+            },
+            {
+                id: 2,
+                enableAmount: 125,
+                payDate: jsonDateFormat(1),
+                totalAmount: 125
+            }
+        ];
+        if (data.length > 0) {
+            $('.no-info').addClass('display-hide');
+            $('.choose-bottom').removeClass('display-hide');
+        }
+        for (var i = 0; i < data.length; i++) {
+            htmls += ' <div class="list-item">' +
+                '<div class="list-item-action" onclick="changeStatus(this)">' +
+                '<div class="radio-uncheck"></div>' +
+                '<div class="radio-checked"></div>' +
+                '<input type="text" hidden name="choose" value="0">' +
+                '<input type="text" hidden name="id" value="' + data[i].id + '">' +
+                '<input type="text" hidden name="money" value="' + data[i].enableAmount + '">' +
+                '</div>' +
+                '<div class="list-item-label">' +
+                '<span>' + data[i].payDate + '</span>' +
+                '<span>可开发票金额</span>' +
+                '</div>' +
+                '<div class="list-item-money">' +
+                '<span>¥ <span class="font-size-22">' + data[i].totalAmount + '</span></span>' +
+                '<span class="color-red">¥ <span class="font-size-18">' + data[i].enableAmount + '</span></span>' +
+                '</div>' +
+                '</div>';
+        }
+
+        $('#list').html(htmls);
+    }
+
+    // 切换勾选项
+    var choosedIds = [];
+    var totalMoney = 0.00;
+
+    function changeStatus(el) {
+        var chooseVal = $(el).find('input').val();
+        if (chooseVal == 0) {
+            $(el).find('.radio-checked').addClass('display-block');
+            $(el).find('input[name="choose"]').val(1);
+        } else {
+            $(el).find('.radio-checked').removeClass('display-block');
+            $(el).find('input[name="choose"]').val(0);
+        }
+
+        choosedIds = [];
+        totalMoney = 0.00;
+        $.each($('.list-item-action'), function (index, value) {
+            var isChoosed = $(value).find('input[name="choose"]').val();
+            var choosedId = $(value).find('input[name="id"]').val();
+            var choosedMoney = $(value).find('input[name="money"]').val();
+            if (isChoosed == 1) {
+                choosedIds.push(choosedId);
+                if (choosedMoney !== "") {
+                    totalMoney = parseFloat(parseFloat(totalMoney) + parseFloat(choosedMoney)).toFixed(2);
+                }
+            }
+        });
+
+        if (choosedIds.length <= 0) {
+            $('.next-btn').addClass('gray-btn');
+        } else {
+            $('.next-btn').removeClass('gray-btn');
+        }
+        $('#total-number').text(choosedIds.length);
+        $('#toatl-money').text(totalMoney != 0 ? totalMoney : '0.00');
+    }
+
+    // 下一步
+    function next() {
+        if (choosedIds.length <= 0) {
+            panelAlert("请至少选择一笔缴费");
+            return;
+        }
+        window.location.href = "add.html?houseId=" + houseId + "&historyIds=" + choosedIds.join(",");
+    }
+
+    $(document).ready(function () {
+        getEnableDataList();
+    });
+</script>
+
+</html>
