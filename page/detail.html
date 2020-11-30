@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="static/css/fapiao-common.css">
+    <link rel="stylesheet" href="static/css/fapiao-add.css">
+    <link rel="stylesheet" href="static/css/frozen.css">
+    <title>电子发票详情</title>
+</head>
+
+<body>
+    <header class="ui-header ui-header-positive ui-border-b">
+        <i class="ui-icon-return" onclick="history.back()"></i>
+        <h1>开具电子发票</h1>
+    </header>
+    <section class="ui-container" style="height:100%;">
+        <div class="container">
+            <!-- 内容区域 -->
+            <div class="wrap">
+                <div class="w-form">
+                    <div class="w-form-item">
+                        <div class="spec-label">
+                            <span>电子发票已开具</span>
+                            <!-- <span class="label-sub" id="createDate">&nbsp;</span>
+                            <span class="label-detail" onclick="showDetailPng()">查看</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="w-form">
+                    <h3 class="w-title">接收信息</h3>
+                    <div class="w-form-item">
+                        <div class="form-label">电子邮箱</div>
+                        <div class="label-value">
+                            <div><span id="email"></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-form">
+                    <h3 class="w-title">发票信息</h3>
+                    <div class="w-form-item">
+                        <div class="form-label">发票抬头</div>
+                        <div class="label-value" id="head"><span></span></div>
+                    </div>
+                    <div class="w-form-item display-hide">
+                        <div class="form-label">税号</div>
+                        <div class="label-value"><span id="headTax"></span></div>
+                    </div>
+                    <div class="w-form-item">
+                        <div class="form-label">总金额</div>
+                        <div class="label-value">
+                            <div><span class="color-red" id="total">0.00</span> 元</div>
+                        </div>
+                    </div>
+                    <div class="w-form-item">
+                        <div class="form-label">申请时间</div>
+                        <div class="label-value"><span id="applyTime"></span></div>
+                    </div>
+                </div>
+                <div class="w-form" style="margin-top:10px;">
+                    <div class="w-form-item">
+                        <div class="spec-label">
+                            <span>1张发票，含<span id="payCount">0</span>笔缴费</span>
+                            <!-- <span class="label-sub" id="createDate1">&nbsp;</span>
+                            <span class="label-detail" onclick="showDetail()">查看</span> -->
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- 底部按钮 -->
+        <div class="footer">
+            <a href="tel:952191">
+                <div class="btn footer-btn"><img class="btn-icon" src="static/img/icon-phone.png" alt=""> 客服热线</div>
+            </a>
+        </div>
+    </section>
+</body>
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/ShopFooter.js"></script>
+<script>
+    var pdfUrl = "";
+    var pngUrl = "";
+    var houseId = GetUrlParam('invoiceId') ? GetUrlParam('invoiceId') : "1"; // 房屋ID
+
+    var dataTotal = [
+        {
+            createDate: jsonDateFormat(7),
+            applyTime:jsonDateFormat(7),
+            id: 1,
+            total: 634
+        },
+        {
+            createDate: jsonDateFormat(5),
+            applyTime:jsonDateFormat(5),
+            id: 1,
+            total: 425
+        },
+        {
+            createDate: jsonDateFormat(4),
+            applyTime:jsonDateFormat(4),
+            id: 1,
+            total: 410.5
+        },
+        {
+            createDate: jsonDateFormat(3),
+            applyTime:jsonDateFormat(3),
+            id: 1,
+            total: 489.5
+        },
+        {
+            createDate: jsonDateFormat(2),
+            applyTime:jsonDateFormat(2),
+            id: 1,
+            total: 315
+        },
+        {
+            createDate: jsonDateFormat(1),
+            applyTime:jsonDateFormat(1),
+            id: 1,
+            total: 248
+        }
+    ];
+
+    // 获取发票信息
+    function getInvoiceData() {
+        var data = dataTotal.find(e => e.id == houseId);
+        $('#createDate').text(data.createDate);
+        $('#createDate1').text(data.createDate);
+        $('#email').text(data.email);
+        $('#head').text(data.head);
+        $('#headTax').text(data.headTax);
+        $('#total').text(data.total);
+        $('#applyTime').text(data.applyTime);
+        $('#payCount').text(data.payCount);
+    }
+
+    // 查看缴费笔数
+    function showDetail() {
+        window.location.href = "detail-info.html?invoiceId=" + invoiceId;
+    }
+
+    // 查看pdf
+    function showDetailPdf() {
+        if (pdfUrl !== undefined && pdfUrl) {
+            window.location.href = "view.html?pdfUrl=" + pdfUrl;
+        }
+    }
+
+    // 查看png
+    function showDetailPng() {
+        if (pngUrl !== undefined && pngUrl) {
+            window.location.href = "view-img.html?pngUrl=" + pngUrl;
+        } else {
+            panelAlert("电子发票图片为空");
+        }
+    }
+
+    // 截取参数
+    function GetUrlParam(paraName) {
+        var url = document.location.toString();
+        var arrObj = url.split("?");
+
+
+        if (arrObj.length > 1) {
+            var arrPara = arrObj[1].split("&");
+            var arr;
+
+
+            for (var i = 0; i < arrPara.length; i++) {
+                arr = arrPara[i].split("=");
+
+
+                if (arr != null && arr[0] == paraName) {
+                    return arr[1];
+                }
+            }
+            return "";
+        }
+        else {
+            return "";
+        }
+    }
+
+    $(document).ready(function () {
+        getInvoiceData();
+    });
+</script>
+
+</html>

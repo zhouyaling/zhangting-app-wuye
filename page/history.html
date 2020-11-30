@@ -40,37 +40,43 @@
     function getEnableDataList() {
         var htmls = "";
         var data = [
-            {
-                createDate: jsonDateFormatM(7),
-                id: 1,
-                total: 634
-            },
-            {
-                createDate: jsonDateFormatM(5),
-                id: 1,
-                total: 425
-            },
-            {
-                createDate: jsonDateFormatM(4),
-                id: 1,
-                total: 410.5
-            },
-            {
-                createDate: jsonDateFormatM(3),
-                id: 1,
-                total: 489.5
-            },
-            {
-                createDate: jsonDateFormatM(2),
-                id: 1,
-                total: 315
-            },
-            {
-                createDate: jsonDateFormatM(1),
-                id: 1,
-                total: 248
-            }
-        ];
+        {
+            createDate: jsonDateFormat(7),
+            applyTime:jsonDateFormat(7),
+            id: 1,
+            total: 634
+        },
+        {
+            createDate: jsonDateFormat(5),
+            applyTime:jsonDateFormat(5),
+            id: 1,
+            total: 425
+        },
+        {
+            createDate: jsonDateFormat(4),
+            applyTime:jsonDateFormat(4),
+            id: 1,
+            total: 410.5
+        },
+        {
+            createDate: jsonDateFormat(3),
+            applyTime:jsonDateFormat(3),
+            id: 1,
+            total: 489.5
+        },
+        {
+            createDate: jsonDateFormat(2),
+            applyTime:jsonDateFormat(2),
+            id: 1,
+            total: 315
+        },
+        {
+            createDate: jsonDateFormat(1),
+            applyTime:jsonDateFormat(1),
+            id: 1,
+            total: 248
+        }
+    ];
 
         if (data.length > 0) {
             $('.no-info').addClass('display-hide');

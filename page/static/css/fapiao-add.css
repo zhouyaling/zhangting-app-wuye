@@ -95,7 +95,7 @@
 
 .spec-label span:nth-of-type(1) {
     font-weight: 700;
-    font-size: 1.6rem;
+    font-size: 0.16rem;
     color: #4B4B4B;
     display: inline-block;
 }
@@ -103,7 +103,7 @@
 .spec-label span:nth-of-type(2) {
     font-size: 0.13rem;
     color: #AEAEAE;
-    margin-top: 0.3rem;
+    margin-top: 0.03rem;
 }
 
 .spec-value {
@@ -115,9 +115,9 @@
 }
 
 .label-detail {
-    font-size: 1.4rem;
+    font-size: 0.14rem;
     color: #A4A4A4;
-    padding-right: 1.2rem;
+    padding-right: 0.12rem;
     position: absolute;
     right: 0;
     top: 50%;
@@ -131,13 +131,13 @@
 
 .label-detail::after {
     content: "";
-    width: 0.7rem;
+    width: 0.07rem;
     height: 0.13rem;
     position: absolute;
     background: url(../img/arrow-right.png) no-repeat 0;
     background-size: 100%;
     right: 0;
-    bottom: 0.3rem;
+    bottom: 0.03rem;
 }
 
 .show-panel {
@@ -305,8 +305,8 @@
 .panel-colse {
     width: 0.4rem;
     height: 0.4rem;
-    background: url(../img/close.png) no-repeat center;
-    background-size: 1.2rem auto;
+    background: url(../img/close-new.png) no-repeat center;
+    background-size: 0.12rem auto;
     position: absolute;
     right: 0px;
     top: 0px;
