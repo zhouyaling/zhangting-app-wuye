@@ -431,30 +431,30 @@ h6, .ui-txt-tips {
   width: 100%;
   height: 0; }
 
-/* 1px hack */
+/* 0.01rem  hack */
 .ui-border-t {
-  border-top: 1px solid #e0e0e0; }
+  border-top: 0.01rem solid #e0e0e0; }
 
 .ui-border-b {
-  border-bottom: 1px solid #e0e0e0; }
+  border-bottom: 0.01rem  solid #e0e0e0; }
 
 .ui-border-tb {
-  border-top: #e0e0e0 1px solid;
-  border-bottom: #e0e0e0 1px solid;
+  border-top: #e0e0e0 0.01rem  solid;
+  border-bottom: #e0e0e0 0.01rem  solid;
   background-image: none; }
 
 .ui-border-l {
-  border-left: 1px solid #e0e0e0; }
+  border-left: 0.01rem  solid #e0e0e0; }
 
 .ui-border-r {
-  border-right: 1px solid #e0e0e0; }
+  border-right: 0.01rem  solid #e0e0e0; }
 
 .ui-border {
-  border: 1px solid #e0e0e0; }
+  border: 0.01rem  solid #e0e0e0; }
 
 .ui-border-radius {
-  border: 1px solid #e0e0e0;
-  border-radius: 4px; }
+  border: 0.01rem  solid #e0e0e0;
+  border-radius: 0.04rem; }
   @media screen and (-webkit-min-device-pixel-ratio: 2) {
     .ui-border-radius {
       position: relative;
@@ -466,10 +466,10 @@ h6, .ui-txt-tips {
         position: absolute;
         top: 0;
         left: 0;
-        border: 1px solid #e0e0e0;
+        border: 0.01rem  solid #e0e0e0;
         -webkit-transform: scale(0.5);
         -webkit-transform-origin: 0 0;
-        padding: 1px;
+        padding: 0.01rem ;
         -webkit-box-sizing: border-box;
         border-radius: 8px;
         pointer-events: none; } }
@@ -494,7 +494,7 @@ h6, .ui-txt-tips {
   .ui-border-b,
   .ui-border-tb {
     background-repeat: repeat-x;
-    -webkit-background-size: 100% 1px; }
+    -webkit-background-size: 100% 0.01rem ; }
 
   .ui-border-tb {
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.5, transparent), color-stop(0.5, #f2f2f2), to(#f2f2f2)), -webkit-gradient(linear, left top, left bottom, color-stop(0.5, transparent), color-stop(0.5, #f2f2f2), to(#f2f2f2));
@@ -511,7 +511,7 @@ h6, .ui-txt-tips {
   .ui-border-l,
   .ui-border-r {
     background-repeat: repeat-y;
-    -webkit-background-size: 1px 100%; }
+    -webkit-background-size: 0.01rem  100%; }
 
   .ui-border:after {
     content: "";
@@ -521,12 +521,12 @@ h6, .ui-txt-tips {
     top: 0;
     left: 0;
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.5, transparent), color-stop(0.5, #e0e0e0), to(#e0e0e0)), -webkit-gradient(linear, left top, right top, color-stop(0.5, transparent), color-stop(0.5, #e0e0e0), to(#e0e0e0)), -webkit-gradient(linear, left top, left bottom, color-stop(0.5, transparent), color-stop(0.5, #e0e0e0), to(#e0e0e0)), -webkit-gradient(linear, right top, left top, color-stop(0.5, transparent), color-stop(0.5, #e0e0e0), to(#e0e0e0));
-    -webkit-background-size: 100% 1px,1px 100% ,100% 1px, 1px 100%;
-    background-size: 100% 1px,1px 100% ,100% 1px, 1px 100%;
-    background-size: 100% 1px,1px 100% ,100% 1px, 1px 100%;
+    -webkit-background-size: 100% 0.01rem ,0.01rem  100% ,100% 0.01rem , 0.01rem  100%;
+    background-size: 100% 0.01rem ,0.01rem  100% ,100% 0.01rem , 0.01rem  100%;
+    background-size: 100% 0.01rem ,0.01rem  100% ,100% 0.01rem , 0.01rem  100%;
     background-repeat: no-repeat;
     background-position: top, right, bottom, left;
-    padding: 1px;
+    padding: 0.01rem ;
     -webkit-box-sizing: border-box;
     z-index: 10;
     pointer-events: none; } }
@@ -981,7 +981,7 @@ h6, .ui-txt-tips {
   right: -4px;
   top: -4px;
   background-clip: padding-box;
-  padding: 1px; }
+  padding: 0.01rem ; }
 
 /* 小号的 */
 .ui-reddot-s:after {
@@ -1068,7 +1068,7 @@ h6, .ui-txt-tips {
   line-height:0.3rem;
   height: 0.3rem;
   padding: 0 0.1rem;
-  border: 1px solid #cacccd;
+  border: 0.01rem  solid #cacccd;
   border-radius: 0.15rem;}
   @media screen and (-webkit-min-device-pixel-ratio: 2) {
     .ui-label {
@@ -1081,10 +1081,10 @@ h6, .ui-txt-tips {
         position: absolute;
         top: 0;
         left: 0;
-        border: 1px solid #cacccd;
+        border: 0.01rem  solid #cacccd;
         -webkit-transform: scale(0.5);
         -webkit-transform-origin: 0 0;
-        padding: 1px;
+        padding: 0.01rem ;
         -webkit-box-sizing: border-box;
         border-radius: 0.3rem;
         pointer-events: none; } }
@@ -1103,7 +1103,7 @@ h6, .ui-txt-tips {
   position: relative;
   padding: 0 0.01rem;
   color: #ff7f0d;
-  border: 1px solid #ff7f0d;
+  border: 0.01rem  solid #ff7f0d;
   border-radius:0.12rem; }
   @media screen and (-webkit-min-device-pixel-ratio: 2) {
     .ui-label-s {
@@ -1116,7 +1116,7 @@ h6, .ui-txt-tips {
         position: absolute;
         top: 0;
         left: 0;
-        border: 1px solid #ff7f0d;
+        border: 0.01rem  solid #ff7f0d;
         -webkit-transform: scale(0.5);
         -webkit-transform-origin: 0 0;
         padding:0.01rem;
@@ -1336,7 +1336,7 @@ h6, .ui-txt-tips {
 .ui-tag-pop-new:before {
   content: "";
   left: -0.1rem;
-  top: 1px; }
+  top: 0.01rem ; }
 
 .ui-tag-pop-hot:after,
 .ui-tag-pop-new:after {
@@ -1363,7 +1363,7 @@ h6, .ui-txt-tips {
   color: #00a5e0;
   -webkit-box-sizing: border-box;
   background-clip: padding-box;
-  border: 1px solid #cacccd;
+  border: 0.01rem  solid #cacccd;
   border-radius: 3px; }
   @media screen and (-webkit-min-device-pixel-ratio: 2) {
     .ui-btn, .ui-btn-lg, .ui-btn-s {
@@ -1376,10 +1376,10 @@ h6, .ui-txt-tips {
         position: absolute;
         top: 0;
         left: 0;
-        border: 1px solid #cacccd;
+        border: 0.01rem  solid #cacccd;
         -webkit-transform: scale(0.5);
         -webkit-transform-origin: 0 0;
-        padding: 1px;
+        padding: 0.01rem ;
         -webkit-box-sizing: border-box;
         border-radius: 6px;
         pointer-events: none; } }
@@ -1452,10 +1452,10 @@ h6, .ui-txt-tips {
 
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
   .ui-btn-primary:before {
-    border: 1px solid #0baae4; }
+    border: 0.01rem  solid #0baae4; }
 
   .ui-btn-danger:before {
-    border: 1px solid #f43d30; }
+    border: 0.01rem  solid #f43d30; }
 
   .ui-btn, .ui-btn-lg, .ui-btn-s {
     border: 0; }
@@ -1470,7 +1470,7 @@ h6, .ui-txt-tips {
   .ui-btn:disabled:before,
   .ui-btn-lg:disabled:before,
   .ui-btn-s:disabled:before {
-    border: 1px solid #e9ebec; }
+    border: 0.01rem  solid #e9ebec; }
 
   .ui-btn-lg:before {
     border-radius: 0.1rem; } }
@@ -1497,7 +1497,7 @@ h6, .ui-txt-tips {
     background-color: #fefefe;
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, white), to(#fafafa));
     color: #ccc;
-    border: 1px solid #cacccd;
+    border: 0.01rem  solid #cacccd;
     background-clip: padding-box; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
@@ -1507,7 +1507,7 @@ h6, .ui-txt-tips {
 
   .ui-btn-progress.disabled:before,
   .ui-btn-progress:disabled:before {
-    border: 1px solid #cacccd; } }
+    border: 0.01rem  solid #cacccd; } }
 .ui-btn-group {
   display: -webkit-box;
   width: 100%;
@@ -1529,7 +1529,7 @@ h6, .ui-txt-tips {
   .ui-tips i {
     display: inline-block;
     width: 0.32rem;
-    height: 1px;
+    height: 0.01rem ;
     vertical-align: top; }
 
 .ui-tips i:before {
@@ -1690,7 +1690,7 @@ h6, .ui-txt-tips {
   margin-right: 4px;
   margin-left: -4px;
   width: 0.32rem;
-  height: 1px;
+  height: 0.01rem ;
   vertical-align: top; }
 
 .ui-tooltips-warn i:before {
@@ -1716,8 +1716,8 @@ h6, .ui-txt-tips {
   font-weight: 500; }
 
 .ui-table td, .ui-table th {
-  border-bottom: 1px solid #e0e0e0;
-  border-right: 1px solid #e0e0e0;
+  border-bottom: 0.01rem  solid #e0e0e0;
+  border-right: 0.01rem  solid #e0e0e0;
   text-align: center; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
@@ -1734,20 +1734,20 @@ h6, .ui-txt-tips {
     left: 0;
     top: 0;
     background-image: -webkit-gradient(linear, left top, right top, color-stop(0.5, transparent), color-stop(0.5, #e0e0e0), to(#e0e0e0)), -webkit-gradient(linear, left top, left bottom, color-stop(0.5, transparent), color-stop(0.5, #e0e0e0), to(#e0e0e0));
-    background-size: 1px 100% ,100% 1px;
+    background-size: 0.01rem  100% ,100% 0.01rem ;
     background-repeat: no-repeat;
     background-position: right, bottom;
     pointer-events: none; }
 
   .ui-table tr td:last-child:after, .ui-table tr th:last-child:after {
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, transparent), color-stop(0.5, #e0e0e0), to(#e0e0e0));
-    background-size: 100% 1px;
+    background-size: 100% 0.01rem ;
     background-repeat: no-repeat;
     background-position: bottom; }
 
   .ui-table tr:last-child td:not(:last-child):after {
     background-image: -webkit-gradient(linear, left top, right top, color-stop(0.5, transparent), color-stop(0.5, #e0e0e0), to(#e0e0e0));
-    background-size: 1px 100%;
+    background-size: 0.01rem  100%;
     background-repeat: no-repeat;
     background-position: right; } }
 .ui-table tr td:last-child, .ui-table tr th:last-child {
@@ -2040,7 +2040,7 @@ h6, .ui-txt-tips {
     right: 6px; }
     @media (max-width: 320px) {
       .ui-form-item .ui-icon-close {
-        right: 1px; } }
+        right: 0.01rem ; } }
   @media (max-width: 320px) {
     .ui-form-item {
       padding-left: 0.1rem;
@@ -2154,7 +2154,7 @@ h6, .ui-txt-tips {
 .ui-checkbox input, .ui-checkbox-s input {
   display: inline-block;
   width: 25px;
-  height: 1px;
+  height: 0.01rem ;
   position: relative;
   overflow: visible;
   border: 0;
@@ -2215,7 +2215,7 @@ h6, .ui-txt-tips {
       content: '';
       width: 50px;
       height: 0.3rem;
-      border: 1px solid #dfdfdf;
+      border: 0.01rem  solid #dfdfdf;
       background-color: #fdfdfd;
       border-radius: 20px;
       cursor: pointer;
@@ -2244,11 +2244,11 @@ h6, .ui-txt-tips {
       width: 0.3rem;
       height: 0.3rem;
       position: absolute;
-      top: 1px;
+      top: 0.01rem ;
       left: 0;
       border-radius: 100%;
       background-color: #fff;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 0.01rem  3px rgba(0, 0, 0, 0.4);
       -webkit-transition: left 0.2s;
       transition: left 0.2s; }
 
@@ -2274,7 +2274,7 @@ h6, .ui-txt-tips {
   display: block;
   width: 24px;
   height: 24px;
-  border: 1px solid #dfe0e1;
+  border: 0.01rem  solid #dfe0e1;
   border-radius: 13px;
   background-clip: padding-box;
   position: absolute;
@@ -2467,8 +2467,8 @@ h6, .ui-txt-tips {
   content: '';
   position: absolute;
   background-color: #fff;
-  left: 1px;
-  top: 1px;
+  left: 0.01rem ;
+  top: 0.01rem ;
   width: 5px;
   height: 5px;
   border-radius: 0.1rem;
@@ -2690,7 +2690,7 @@ h6, .ui-txt-tips {
   .ui-poptips-cnt i {
     display: inline-block;
     width: 0.32rem;
-    height: 1px;
+    height: 0.01rem ;
     vertical-align: top; }
     .ui-poptips-cnt i:before {
       font-family: "iconfont" !important;
@@ -2778,7 +2778,7 @@ h6, .ui-txt-tips {
   width: 100%;
   box-sizing: border-box;
   -webkit-box-align: center;
-  border-top: 1px solid #e0e0e0;
+  border-top: 0.01rem  solid #e0e0e0;
   height:0.42rem;
   line-height:0.42rem; }
 
@@ -2805,7 +2805,7 @@ h6, .ui-txt-tips {
 .ui-dialog-ft button {
   color: #00a5e0;
   text-align: center;
-  border-right: 1px #e0e0e0 solid;
+  border-right: 0.01rem  #e0e0e0 solid;
   width: 100%;
   line-height:0.42rem;
   background: transparent;
@@ -2827,14 +2827,14 @@ h6, .ui-txt-tips {
     background-position: left top;
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.5, transparent), color-stop(0.5, #e0e0e0), to(#e0e0e0));
     background-repeat: repeat-x;
-    -webkit-background-size: 100% 1px; }
+    -webkit-background-size: 100% 0.01rem ; }
 
   .ui-dialog-ft button {
     border-right: 0;
     background-position: right top;
     background-image: -webkit-gradient(linear, left top, right top, color-stop(0.5, transparent), color-stop(0.5, #e0e0e0), to(#e0e0e0));
     background-repeat: repeat-y;
-    -webkit-background-size: 1px 100%; }
+    -webkit-background-size: 0.01rem  100%; }
     .ui-dialog-ft button:last-child {
       background: none; } }
 .ui-selector header {
@@ -2952,7 +2952,7 @@ h6, .ui-txt-tips {
   border-top-right-radius: 3px; }
 
 .ui-actionsheet button:not(:last-child) {
-  border-top: 1px #e0e0e0 solid; }
+  border-top: 0.01rem  #e0e0e0 solid; }
 
 .ui-actionsheet button:last-child {
   margin: 8px 0;
@@ -2978,6 +2978,6 @@ h6, .ui-txt-tips {
     background-position: left top;
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.5, transparent), color-stop(0.5, #e0e0e0), to(#e0e0e0));
     background-repeat: repeat-x;
-    -webkit-background-size: 100% 1px; } }
+    -webkit-background-size: 100% 0.01rem ; } }
 
 /*# sourceMappingURL=frozen.css.map */

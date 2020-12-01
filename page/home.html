@@ -31,12 +31,12 @@
 		</header>
 
 		<section class="aui-scrollView">
-			<div class="aui-flex">
+			<div class="aui-flex" style="padding:0">
 				<div class="aui-flex-box">
 					<div class="aui-head-text">
 						<h2>你好！</h2>
-						<h3>2020.11.14</h3>
-						<p>星期六</p>
+						<h3 id="today"></h3>
+						<p id="weekday"></p>
 					</div>
 					<img src="./resource/banner.png" alt="">
 					<div></div>
@@ -49,54 +49,7 @@
 				</div>
 			</div>
 			<div class="aui-palace aui-palace-one">
-				<a href="./baoshi.html" class="aui-palace-grid">
-					<div class="aui-palace-grid-icon">
-						<img src="./static/picture/ic_1.png" alt="">
-					</div>
-					<div class="aui-palace-grid-text">
-						<h2>报事处理</h2>
-					</div>
-				</a>
-				<a href="./xungeng.html" class="aui-palace-grid">
-					<div class="aui-palace-grid-icon">
-						<img src="./static/picture/ic_2.png" alt="">
-					</div>
-					<div class="aui-palace-grid-text">
-						<h2>巡更</h2>
-					</div>
-				</a>
-				<a href="./mail.html" class="aui-palace-grid">
-					<div class="aui-palace-grid-icon">
-						<img src="./static/picture/ic_3.png" alt="">
-					</div>
-					<div class="aui-palace-grid-text">
-						<h2>品质巡检</h2>
-					</div>
-				</a>
-				<a href="./erp.html" class="aui-palace-grid">
-					<div class="aui-palace-grid-icon">
-						<img src="./static/picture/ic_4.png" alt="">
-					</div>
-					<div class="aui-palace-grid-text">
-						<h2>限时服务</h2>
-					</div>
-				</a>
-				<a href="./chart.html" class="aui-palace-grid">
-					<div class="aui-palace-grid-icon">
-						<img src="./static/picture/ic_5.png" alt="">
-					</div>
-					<div class="aui-palace-grid-text">
-						<h2>云监控</h2>
-					</div>
-				</a>
-				<a href="./machine.html" class="aui-palace-grid">
-					<div class="aui-palace-grid-icon">
-						<img src="./static/picture/ic_6.png" alt="">
-					</div>
-					<div class="aui-palace-grid-text">
-						<h2>装修查询</h2>
-					</div>
-				</a>
+
 				<a href="./car.html" class="aui-palace-grid">
 					<div class="aui-palace-grid-icon">
 						<img src="./static/picture/ic_4.png" alt="">
@@ -113,6 +66,55 @@
 						<h2>电子发票</h2>
 					</div>
 				</a>
+				<a href="./machine.html" class="aui-palace-grid">
+					<div class="aui-palace-grid-icon">
+						<img src="./static/picture/ic_6.png" alt="">
+					</div>
+					<div class="aui-palace-grid-text">
+						<h2>装修查询</h2>
+					</div>
+				</a>
+				<a href="./chart.html" class="aui-palace-grid">
+					<div class="aui-palace-grid-icon">
+						<img src="./static/picture/ic_5.png" alt="">
+					</div>
+					<div class="aui-palace-grid-text">
+						<h2>云监控</h2>
+					</div>
+				</a>
+				<a href="./xungeng.html" class="aui-palace-grid">
+					<div class="aui-palace-grid-icon">
+						<img src="./static/picture/ic_2.png" alt="">
+					</div>
+					<div class="aui-palace-grid-text">
+						<h2>巡更</h2>
+					</div>
+				</a>
+
+				<a href="./mail.html" class="aui-palace-grid">
+					<div class="aui-palace-grid-icon">
+						<img src="./static/picture/ic_3.png" alt="">
+					</div>
+					<div class="aui-palace-grid-text">
+						<h2>品质巡检</h2>
+					</div>
+				</a>
+				<a href="./baoshi.html" class="aui-palace-grid">
+					<div class="aui-palace-grid-icon">
+						<img src="./static/picture/ic_1.png" alt="">
+					</div>
+					<div class="aui-palace-grid-text">
+						<h2>报事处理</h2>
+					</div>
+				</a>
+				<a href="./erp.html" class="aui-palace-grid">
+					<div class="aui-palace-grid-icon">
+						<img src="./static/picture/ic_4.png" alt="">
+					</div>
+					<div class="aui-palace-grid-text">
+						<h2>限时服务</h2>
+					</div>
+				</a>
 			</div>
 
 			<div class="aui-info" style="margin-top: 3vh;">
@@ -125,15 +127,6 @@
 					</div>
 					<div class="aui-arrow"></div>
 				</a>
-				<!-- <a href="./contacts.html" class="aui-flex b-line">
-					<div class="aui-six-img">
-						<img src="./resource/fl-002.png" alt="">
-					</div>
-					<div class="aui-flex-box">
-						<h4>CRM 销售门户</h4>
-					</div>
-					<div class="aui-arrow"></div>
-				</a> -->
 			</div>
 
 		</section>
@@ -161,5 +154,11 @@
 
 
 </body>
+<script src="static//js/jquery.min.js"></script>
+<script src="static/js/ShopFooter.js"></script>
+<script>
+	$('#today').html(jsonDateFormatM(0))
+	$('#weekday').html(GetQueryWeekString())
+</script>
 
 </html>

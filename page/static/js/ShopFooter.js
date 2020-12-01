@@ -106,7 +106,7 @@ function jsonDateFormatM(num) {
         var hours = date.getHours();
         var minutes = date.getMinutes();
         var seconds = date.getSeconds();
-        return date.getFullYear() + "-" + month + "-" + day ;
+        return date.getFullYear() + "-" + month + "-" + day;
     } catch (ex) {
         return "";
     }
@@ -117,9 +117,9 @@ function jsonDateFormat(num) {
         var date = new Date(new Date().getTime() - num * 60000);
         var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
         var day = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
-        var hours = date.getHours()<10?'0' + date.getHours():date.getHours();
-        var minutes = date.getMinutes()<10?'0' + date.getMinutes():date.getMinutes();
-        var seconds = date.getSeconds()<10?'0' + date.getSeconds():date.getSeconds();
+        var hours = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+        var minutes = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+        var seconds = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
         return date.getFullYear() + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds;
     } catch (ex) {
         return "";
@@ -162,4 +162,12 @@ function onmethon() {
 function isocamera() {
     window.webkit.messageHandlers.camera.postMessage("");
 
+}
+
+// 星期
+var weekGroup = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
+function GetQueryWeekString() {
+    var date = new Date();
+    console.log(date.getDay());
+    return weekGroup[date.getDay()-1]
 }
