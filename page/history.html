@@ -83,13 +83,13 @@
         }
 
         for (var i = 0; i < data.length; i++) {
-            htmls += '<div class="list-item">' +
+            htmls += '<div class="list-item" onclick="showDetail(\'' + data[i].id + '\')">' +
                 ' <div class="list-item-label">' +
                 '     <span>' + data[i].createDate + '</span>' +
                 '     <span>电子发票</span>' +
                 ' </div>' +
                 ' <div class="list-item-money">' +
-                '     <span class="arrow-action" onclick="showDetail(\'' + data[i].id + '\')">已开票<img src="static/img/icon-arrow-right.png" alt=""></span>' +
+                '     <span class="arrow-action" >已开票<img src="static/img/icon-arrow-right.png" alt=""></span>' +
                 '    <span class="color-red">¥ <span class="font-size-18">' + data[i].total + '</span></span>' +
                 '</div>' +
                 '</div>';

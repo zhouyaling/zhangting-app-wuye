@@ -14,6 +14,11 @@
 </head>
 
 <body>
+    <header class="ui-header ui-header-positive ui-border-b">
+        <i class="ui-icon-return" onclick="goAdd()"></i>
+        <h1>开具电子发票</h1>
+    </header>
+    <section class="ui-container" style="height:100%;">
     <div class="container back-white">
         <div class="result-message">
             <div class="result-icon">
@@ -30,6 +35,7 @@
         </div>
     </div>
     </div>
+    </section>
 </body>
 <script src="static/js/jquery.min.js"></script>
 <script>
@@ -44,6 +50,8 @@
     function goHistory() {
         window.location.href = "history.html?houseId=";
     }
+
+
 </script>
 
 </html>

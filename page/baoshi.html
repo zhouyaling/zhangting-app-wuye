@@ -13,6 +13,10 @@
 	<script src="static/js/frozen.js"></script>
 	<script src="static/js/ShopFooter.js"></script>
 	<style>
+		body,section{
+			overflow-x: hidden;
+			overflow-y: scroll;
+		}
 		.page-nav {
 			display: flex;
 			align-items: center;
@@ -20,9 +24,10 @@
 		}
 
 		.page-nav>div {
-			border-bottom: 0.01rem solid #888;
+			border-bottom: 0.01rem solid #999;
 			padding: 0.06rem 0.2rem;
 			font-size: 0.15rem;
+			color: #999;
 		}
 
 		.page-nav .active {
