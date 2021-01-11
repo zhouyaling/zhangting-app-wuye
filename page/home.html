@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-	<title>管家APP</title>
+	<meta charset="UTF-8">
 	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
 	<meta content="yes" name="apple-mobile-web-app-capable">
 	<meta content="black" name="apple-mobile-web-app-status-bar-style">
 	<meta content="telephone=no" name="format-detection">
+	<title>管家APP</title>
 	<link href="static/css/style1.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="static/css/frozen.css">
+	<script type="text/javascript" src="static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="static/js/reconnecting-websocket.min.js">
+		</script>
+		<script type="text/javascript" src="static/js/ShopFooter.js"></script>
+		<script>
+			$('#today').html(jsonDateFormatM(0))
+			$('#weekday').html(GetQueryWeekString())
+			$(document).ready(function () {
+				initSocket();
+			});
+		</script>
 </head>
 
 <body>
@@ -150,11 +159,6 @@
 
 
 </body>
-<script src="static//js/jquery.min.js"></script>
-<script src="static/js/ShopFooter.js"></script>
-<script>
-	$('#today').html(jsonDateFormatM(0))
-	$('#weekday').html(GetQueryWeekString())
-</script>
+
 
 </html>

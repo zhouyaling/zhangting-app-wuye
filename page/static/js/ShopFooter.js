@@ -19,6 +19,7 @@ var projectName = GetQueryString("projectName");
 var CompanyName = GetQueryString("CompanyName");
 var handleStateRL = GetQueryString("handleStateRL"); //违章记录的操作权限
 var indexfetchurl = '&patrolUserId=' + patrolUserId + '&patrolUserName=' + patrolUserName + '&projectName=' + encodeURI(projectName) + '&patrolPhone=' + patrolPhone + '&projectId=' + projectId + '&role=' + role + '&handleState=' + handleState;
+var reportInfoList = []
 
 
 function requertUrl(conT, funC) {
@@ -169,5 +170,65 @@ var weekGroup = ["星期一", "星期二", "星期三", "星期四", "星期五"
 function GetQueryWeekString() {
     var date = new Date();
     console.log(date.getDay());
-    return weekGroup[date.getDay()-1]
+    return weekGroup[date.getDay() - 1]
+}
+
+// 初始化socket
+var ws = null;
+function initSocket() {
+    if (window.ReconnectingWebSocket) {
+        ws = new ReconnectingWebSocket('ws://47.95.35.97:80'); // ws://47.95.35.97:80
+        ws.onopen = function (e) {
+            console.log("连接服务器成功");
+            var item = {};
+            item.type = "regist";
+            item.server = "";
+            item.value = "server2010701";
+            item.order = [];
+            ws.send(JSON.stringify(item));
+        }
+        ws.onclose = function (e) {
+            console.log("服务器关闭");
+        }
+        ws.onerror = function () {
+            console.log("连接出错");
+        }
+        ws.onmessage = function (e) {
+            var item = JSON.parse(e.data);
+            console.log(item);
+            showBi(item);
+            var item = order("1");
+            ws.send(JSON.stringify(item));
+        }
+    }
+}
+
+//传入的名称
+function showBi(item) {
+    if (item && item.showImg && item.showImg == "zt_report") {
+        showInfo();
+    }
+}
+
+function order(_status) {
+    var item = {};
+    item.type = "order";
+    item.server = "client2010701"; //识别客户端
+    item.value = "";
+    item.order = [];
+    var jObj = {
+        status: "1",
+    };
+    item.order.push(jObj)
+    return item;
+}
+
+function showInfo() {
+    $('.dialog-msg').remove();
+    var htmls = "<div class='dialog-msg'><div class='card'><div>你收到一条报事消息,请及时处理</div></div></div>"
+    $('body').append(htmls)
+    window.setTimeout(function () {
+        $('.dialog-msg').fadeOut();
+    }, 2000)
+
 }

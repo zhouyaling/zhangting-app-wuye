@@ -2981,3 +2981,26 @@ h6, .ui-txt-tips {
     -webkit-background-size: 100% 0.01rem ; } }
 
 /*# sourceMappingURL=frozen.css.map */
+
+.dialog-msg{
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99999;
+  background: rgba(0,0,0,0.3);
+}
+
+.dialog-msg .card{
+  width: 60%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  background: rgba(0,0,0,0.8);
+  padding: 15px;
+  border-radius: 6px;
+  color: #fff;
+  margin-left: -30%;
+}
