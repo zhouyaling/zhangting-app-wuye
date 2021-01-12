@@ -244,3 +244,54 @@ function showInfo() {
     }, 2000)
 
 }
+
+var prportData = [
+    {
+        name: '报事转派',
+        type: '工区保洁',
+        address: '室内',
+        time: jsonDateFormatM(0),
+        phone: '15222158752',
+        status: 1,
+    },
+    {
+        name: '报事转派',
+        type: '工区保洁',
+        address: '室内',
+        time: jsonDateFormatM(1),
+        phone: '155221587813',
+        status: 1,
+    },
+    {
+        name: '报事转派',
+        type: '工区保洁',
+        address: '室内',
+        time: jsonDateFormatM(2),
+        phone: '13586518536',
+        status: 1,
+    },
+    {
+        name: '报事转派',
+        type: '工区保洁',
+        address: '室内',
+        time: jsonDateFormatM(2),
+        phone: '133265206819',
+        status: 1,
+    },
+    {
+        name: '报事转派',
+        type: '工区保洁',
+        address: '室内',
+        time: jsonDateFormatM(3),
+        phone: '155221587813',
+        status: 2,
+    },
+    {
+        name: '报事转派',
+        type: '工区保洁',
+        address: '室内',
+        time: jsonDateFormatM(4),
+        phone: '15523787716',
+        status: 2,
+    }
+]

@@ -127,57 +127,13 @@
 </body>
 <script src="./static/js//jquery.min.js"></script>
 <script>
+	var activeIndex = 1;
 	$(document).ready(function () {
 		loadData();
 	})
 
 	function loadData() {
-		var htmls = "";
-		var data = [
-			{
-				name: '报事转派',
-				type: '工区保洁',
-				address: '室内',
-				time: jsonDateFormatM(0),
-				phone: '15222158752'
-			},
-			{
-				name: '报事转派',
-				type: '工区保洁',
-				address: '室内',
-				time: jsonDateFormatM(1),
-				phone: '155221587813'
-			},
-			{
-				name: '报事转派',
-				type: '工区保洁',
-				address: '室内',
-				time: jsonDateFormatM(2),
-				phone: '13586518536'
-			},
-			{
-				name: '报事转派',
-				type: '工区保洁',
-				address: '室内',
-				time: jsonDateFormatM(2),
-				phone: '133265206819'
-			},
-			{
-				name: '报事转派',
-				type: '工区保洁',
-				address: '室内',
-				time: jsonDateFormatM(3),
-				phone: '155221587813'
-			},
-			{
-				name: '报事转派',
-				type: '工区保洁',
-				address: '室内',
-				time: jsonDateFormatM(4),
-				phone: '15523787716'
-			}
-		]
-
+		var data = prportData;
 		var cacheD = sessionStorage.getItem("reportInfoList")
 		if (cacheD && cacheD != undefined && cacheD != null) {
 			var d = JSON.parse(cacheD);
@@ -188,22 +144,23 @@
 				time: d.time
 			})
 		}
-
+		var htmls = "";
 		for (var i = 0; i < data.length; i++) {
 			if (data[i].name && data[i].name != "undefined") {
-				htmls += '<div class="bs-item">' +
-					'<div class="bs-img-box"></div>' +
-					'<div class="bs-info-box">' +
-					'	<div>' + data[i].name + '</div>' +
-					'	<div class="bs-info-btns">' +
-					'		<span>' + data[i].type + '</span>' +
-					'		<span>' + data[i].address + '</span>' +
-					'	</div>' +
-					'	<div> 时间：' + data[i].time + '&nbsp;&nbsp;<span> 联系：' + (data[i].phone ? data[i].phone : "") + '</span></div>' +
-					'</div>' +
-					'</div > ';
+				if (activeIndex == data[i].status) {
+					htmls += '<div class="bs-item">' +
+						'<div class="bs-img-box"></div>' +
+						'<div class="bs-info-box">' +
+						'	<div>' + data[i].name + '</div>' +
+						'	<div class="bs-info-btns">' +
+						'		<span>' + data[i].type + '</span>' +
+						'		<span>' + data[i].address + '</span>' +
+						'	</div>' +
+						'	<div> 时间：' + data[i].time + '&nbsp;&nbsp;<span> 联系：' + (data[i].phone ? data[i].phone : "") + '</span></div>' +
+						'</div>' +
+						'</div > ';
+				}
 			}
-
 		}
 
 		$('#list').html(htmls)
@@ -212,6 +169,8 @@
 	function changeNav(type, el) {
 		$('.page-nav').find('.active').removeClass('active')
 		$(el).addClass('active')
+		activeIndex = type
+		loadData();
 	}
 </script>
 
