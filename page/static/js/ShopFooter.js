@@ -206,6 +206,18 @@ function initSocket() {
 //传入的名称
 function showBi(item) {
     if (item && item.showImg && item.showImg == "zt_report") {
+        var dataRes = [];
+        dataRes.push(item)
+        var cacheD = sessionStorage.getItem("reportInfoList")
+        if (cacheD && cacheD != undefined && cacheD != null) {
+            dataRes.push(JSON.parse(cacheD))
+        }
+
+        sessionStorage.setItem("reportInfoList", JSON.stringify(dataRes))
+
+        if (typeof (loadData) === "function") {
+            loadData();
+        }
         showInfo();
     }
 }

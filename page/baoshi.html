@@ -12,11 +12,18 @@
 	<script src="static/js/zepto.min.js"></script>
 	<script src="static/js/frozen.js"></script>
 	<script src="static/js/ShopFooter.js"></script>
+	<script>
+		$(document).ready(function () {
+			initSocket();
+		});
+	</script>
 	<style>
-		body,section{
+		body,
+		section {
 			overflow-x: hidden;
 			overflow-y: scroll;
 		}
+
 		.page-nav {
 			display: flex;
 			align-items: center;
@@ -50,21 +57,21 @@
 		}
 
 		.bs-img-box {
-			width: 30%;
-			height: 1rem;
+			width: 24%;
+			height: 0.8rem;
 			background: url(./static/img/default-img.png) no-repeat center;
 			background-size: 100% 100%;
-			padding-left: 0.15rem;
+			padding-left: 0.1rem;
 			box-sizing: border-box;
 		}
 
 		.bs-info-box {
 			width: 70%;
-			height: 1rem;
+			height: 0.8rem;
 			display: flex;
 			justify-content: space-around;
 			flex-direction: column;
-			padding-left: 0.15rem;
+			padding-left: 0.1rem;
 			box-sizing: border-box;
 			color: #444;
 		}
@@ -73,7 +80,7 @@
 
 		.bs-info-btns>span:nth-of-type(1) {
 			border-radius: 0.03rem;
-			padding: 0.05rem 0.1rem;
+			padding: 0.04rem 0.1rem;
 			border: 0.01rem solid #C7374C;
 			margin-right: 0.1rem;
 			font-size: 0.1rem;
@@ -82,7 +89,7 @@
 
 		.bs-info-btns>span:nth-of-type(2) {
 			border-radius: 0.03rem;
-			padding: 0.05rem 0.1rem;
+			padding: 0.04rem 0.1rem;
 			border: 0.01rem solid #C7374C;
 			font-size: 0.1rem;
 			color: #C7374C;
@@ -117,7 +124,10 @@
 <script src="./static/js//jquery.min.js"></script>
 <script>
 	$(document).ready(function () {
-		console.log(reportInfoList)
+		loadData();
+	})
+
+	function loadData() {
 		var htmls = "";
 		var data = [
 			{
@@ -163,26 +173,40 @@
 				time: jsonDateFormatM(4)
 			}
 		]
+
+		var cacheD = sessionStorage.getItem("reportInfoList")
+		if (cacheD && cacheD != undefined && cacheD != null) {
+			var d = JSON.parse(cacheD);
+			data.unshift({
+				name: d.content,
+				type: d.type,
+				address: d.address,
+				time: d.time
+			})
+		}
+
 		for (var i = 0; i < data.length; i++) {
-			htmls += '<div class="bs-item">' +
-				'<div class="bs-img-box"></div>' +
-				'<div class="bs-info-box">' +
-				'	<div>' + data[i].name + '</div>' +
-				'	<div class="bs-info-btns">' +
-				'		<span>' + data[i].type + '</span>' +
-				'		<span>' + data[i].address + '</span>' +
-				'	</div>' +
-				'	<div>' + data[i].time + '</div>' +
-				'</div>' +
-				'</div > ';
+			if (data[i].name && data[i].name != "undefined") {
+				htmls += '<div class="bs-item">' +
+					'<div class="bs-img-box"></div>' +
+					'<div class="bs-info-box">' +
+					'	<div>' + data[i].name + '</div>' +
+					'	<div class="bs-info-btns">' +
+					'		<span>' + data[i].type + '</span>' +
+					'		<span>' + data[i].address + '</span>' +
+					'	</div>' +
+					'	<div>' + data[i].time + '</div>' +
+					'</div>' +
+					'</div > ';
+			}
+
 		}
 
 		$('#list').html(htmls)
-	})
+	}
 
 	function changeNav(type, el) {
 		$('.page-nav').find('.active').removeClass('active')
-		debugger
 		$(el).addClass('active')
 	}
 </script>
