@@ -128,12 +128,12 @@
 <script src="./static/js//jquery.min.js"></script>
 <script>
 	var activeIndex = 1;
+	var data = prportData;
 	$(document).ready(function () {
 		loadData();
 	})
 
 	function loadData() {
-		var data = prportData;
 		var cacheD = sessionStorage.getItem("reportInfoList")
 		if (cacheD && cacheD != undefined && cacheD != null) {
 			var d = JSON.parse(cacheD);
@@ -148,7 +148,7 @@
 		for (var i = 0; i < data.length; i++) {
 			if (data[i].name && data[i].name != "undefined") {
 				if (activeIndex == data[i].status) {
-					htmls += '<div class="bs-item">' +
+					htmls += '<div class="bs-item" onclick="detail('+  i +')">' +
 						'<div class="bs-img-box"></div>' +
 						'<div class="bs-info-box">' +
 						'	<div>' + data[i].name + '</div>' +
@@ -171,6 +171,10 @@
 		$(el).addClass('active')
 		activeIndex = type
 		loadData();
+	}
+
+	function detail(num){
+		window.location.href="baoshiDetail.html?item=" + JSON.stringify(data[num])
 	}
 </script>
 

@@ -12,11 +12,7 @@
     <script src="static/js/zepto.min.js"></script>
     <script src="static/js/frozen.js"></script>
     <script src="static/js/ShopFooter.js"></script>
-    <script>
-        $(document).ready(function () {
-            initSocket();
-        });
-    </script>
+
     <style>
         body,
         section {
@@ -96,79 +92,79 @@
         .bs-color {
             color: #C7374C;
         }
+
+        .detail-content {
+            padding: 0.13rem;
+            color: #666;
+            font-size: 0.14rem;
+        }
+
+        .detail-textarea textarea {
+            width: 100%;
+            border: 1px solid #f2f2f2;
+            color: #666;
+            padding: 6px;
+            box-sizing: border-box;
+            height: 20vh;
+        }
+
+        .detail-btn {
+            background: #0297FE;
+            width: 80%;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            border-radius: 4px;
+            margin-left: 10%;
+            margin-top: 40px;
+        }
     </style>
 </head>
 
 <body ontouchstart="">
     <header class="ui-header ui-header-positive ui-border-b">
-        <i class="ui-icon-return" onclick="window.location.href = 'home.html'"></i>
+        <i class="ui-icon-return" onclick="window.location.href = 'baoshi.html'"></i>
         <h1>报事处理</h1>
     </header>
     <section class="ui-container">
-        <div class="ui-searchbar-wrap ui-border-b">
-            <div class="ui-searchbar ui-border-radius">
-                <i class="ui-icon-search"></i>
-                <div class="ui-searchbar-text">搜索</div>
-                <div class="ui-searchbar-input"><input value="" type="tel" placeholder="搜索" autocapitalize="off"></div>
-                <i class="ui-icon-close"></i>
+        <div class="detail-content" id="list">
+            <div class="detail-textarea"><textarea placeholder="请填写处理结果" name="" id="" cols="30" rows="10"></textarea>
             </div>
-            <button class="ui-searchbar-cancel">取消</button>
-        </div>
-        <div class="page-nav">
-            <div class="active" onclick="changeNav(1,this)">待处理</div>
-            <div onclick="changeNav(2,this)">已处理</div>
-        </div>
-        <div id="list">
+            <div class="detail-btn" onclick="submit()">
+                <div>提交</div>
+            </div>
         </div>
     </section>
 
 </body>
-<script src="./static/js//jquery.min.js"></script>
+<script src="./static/js/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
-        var id = GetQueryString();
-        loadData();
+        initSocket();
+        var detailInfo = {}
+        var item = GetQueryString('item');
+        if (item != null && item != undefined) {
+            detailInfo = JSON.parse(item)
+        }
+
     })
 
-    function loadData() {
-        var data = prportData;
+    function submit() {
+        var d = []
         var cacheD = sessionStorage.getItem("reportInfoList")
         if (cacheD && cacheD != undefined && cacheD != null) {
-            var d = JSON.parse(cacheD);
-            data.unshift({
-                name: d.content,
-                type: d.type,
-                address: d.address,
-                time: d.time
-            })
+            d = JSON.parse(cacheD);
         }
-        var htmls = "";
-        for (var i = 0; i < data.length; i++) {
-            if (data[i].name && data[i].name != "undefined") {
-                if (activeIndex == data[i].status) {
-                    htmls += '<div class="bs-item">' +
-                        '<div class="bs-img-box"></div>' +
-                        '<div class="bs-info-box">' +
-                        '	<div>' + data[i].name + '</div>' +
-                        '	<div class="bs-info-btns">' +
-                        '		<span>' + data[i].type + '</span>' +
-                        '		<span>' + data[i].address + '</span>' +
-                        '	</div>' +
-                        '	<div> 时间：' + data[i].time + '&nbsp;&nbsp;<span> 联系：' + (data[i].phone ? data[i].phone : "") + '</span></div>' +
-                        '</div>' +
-                        '</div > ';
-                }
+        for (var i = 0; i < d.length; i++) {
+            if (d[i].time == detailInfo.time) {
+                d[i].status = 2;
             }
         }
 
-        $('#list').html(htmls)
+        sessionStorage.setItem("reportInfoList",JSON.stringify(d))
+        window.location.href = "baoshi.html"
     }
 
-    function changeNav(type, el) {
-        $('.page-nav').find('.active').removeClass('active')
-        $(el).addClass('active')
-        loadData();
-    }
 </script>
 
 </html>

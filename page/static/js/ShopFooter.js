@@ -252,7 +252,7 @@ var prportData = [
         address: '室内',
         time: jsonDateFormatM(0),
         phone: '15222158752',
-        status: 1,
+        status: 2,
     },
     {
         name: '报事转派',
@@ -260,7 +260,7 @@ var prportData = [
         address: '室内',
         time: jsonDateFormatM(1),
         phone: '155221587813',
-        status: 1,
+        status: 2,
     },
     {
         name: '报事转派',
@@ -268,7 +268,7 @@ var prportData = [
         address: '室内',
         time: jsonDateFormatM(2),
         phone: '13586518536',
-        status: 1,
+        status: 2,
     },
     {
         name: '报事转派',
@@ -276,7 +276,7 @@ var prportData = [
         address: '室内',
         time: jsonDateFormatM(2),
         phone: '133265206819',
-        status: 1,
+        status: 2,
     },
     {
         name: '报事转派',
