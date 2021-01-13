@@ -9,14 +9,11 @@
 	<link rel="stylesheet" href="static/css/frozen.css">
 	<link rel="stylesheet" href="static/css/font-awesome.min.css">
 	<link rel="stylesheet" href="static/css/app.css">
+	<script src="./static/js/jquery.min.js"></script>
 	<script src="static/js/zepto.min.js"></script>
 	<script src="static/js/frozen.js"></script>
+	<script type="text/javascript" src="static/js/reconnecting-websocket.min.js"></script>
 	<script src="static/js/ShopFooter.js"></script>
-	<script>
-		$(document).ready(function () {
-			initSocket();
-		});
-	</script>
 	<style>
 		body,
 		section {
@@ -121,48 +118,61 @@
 			<div onclick="changeNav(2,this)">已处理</div>
 		</div>
 		<div id="list">
+			
 		</div>
 	</section>
 
 </body>
-<script src="./static/js//jquery.min.js"></script>
+
 <script>
 	var activeIndex = 1;
 	var data = prportData;
+	var newD = []
 	$(document).ready(function () {
+		initSocket();
 		loadData();
 	})
 
 	function loadData() {
+		var otherData = []
 		var cacheD = sessionStorage.getItem("reportInfoList")
 		if (cacheD && cacheD != undefined && cacheD != null) {
-			var d = JSON.parse(cacheD);
-			data.unshift({
-				name: d.content,
-				type: d.type,
-				address: d.address,
-				time: d.time
-			})
+			var res = JSON.parse(cacheD);
+			res.forEach(d => {
+				otherData.push({
+					name: d.content,
+					type: d.type,
+					address: d.address,
+					time: d.time,
+					status:d.status
+				})
+			});
+
 		}
+
+		 newD = otherData.concat(data)
 		var htmls = "";
-		for (var i = 0; i < data.length; i++) {
-			if (data[i].name && data[i].name != "undefined") {
-				if (activeIndex == data[i].status) {
-					htmls += '<div class="bs-item" onclick="detail('+  i +')">' +
+		for (var i = 0; i < newD.length; i++) {
+			if (newD[i].name != "undefined") {
+				if (activeIndex == newD[i].status) {
+					htmls += '<div class="bs-item" onclick="detail(' + i + ')">' +
 						'<div class="bs-img-box"></div>' +
 						'<div class="bs-info-box">' +
-						'	<div>' + data[i].name + '</div>' +
+						'	<div>' + newD[i].name + '</div>' +
 						'	<div class="bs-info-btns">' +
-						'		<span>' + data[i].type + '</span>' +
-						'		<span>' + data[i].address + '</span>' +
+						'		<span>' + newD[i].type + '</span>' +
+						'		<span>' + newD[i].address + '</span>' +
 						'	</div>' +
-						'	<div> 时间：' + data[i].time + '&nbsp;&nbsp;<span> 联系：' + (data[i].phone ? data[i].phone : "") + '</span></div>' +
+						'	<div> ' + newD[i].time + '&nbsp;&nbsp;<span>  ' + (newD[i].phone ? newD[i].phone : "") + '</span></div>' +
 						'</div>' +
 						'</div > ';
 				}
 			}
 		}
 
+		if(!htmls){
+			htmls = "<div style='text-align:center; padding-top:15%;color:#888'><image style='width:40%;margin-top:30px' src='./static/img/icon-no.png' /><p>暂无数据</p></div>"
+		}
 		$('#list').html(htmls)
 	}
 
@@ -173,8 +183,8 @@
 		loadData();
 	}
 
-	function detail(num){
-		window.location.href="baoshiDetail.html?item=" + JSON.stringify(data[num])
+	function detail(num) {
+		window.location.href = "baoshiDetail.html?item=" + JSON.stringify(newD[num])
 	}
 </script>
 

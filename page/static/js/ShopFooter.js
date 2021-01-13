@@ -210,7 +210,10 @@ function showBi(item) {
         dataRes.push(item)
         var cacheD = sessionStorage.getItem("reportInfoList")
         if (cacheD && cacheD != undefined && cacheD != null) {
-            dataRes.push(JSON.parse(cacheD))
+            var res = JSON.parse(cacheD)
+            res.forEach(element => {
+                dataRes.push(element)
+            });
         }
 
         sessionStorage.setItem("reportInfoList", JSON.stringify(dataRes))

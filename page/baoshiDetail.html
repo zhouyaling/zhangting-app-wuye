@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="static/css/app.css">
     <script src="static/js/zepto.min.js"></script>
     <script src="static/js/frozen.js"></script>
+    <script src="./static/js/jquery.min.js"></script>
+<script type="text/javascript" src="static/js/reconnecting-websocket.min.js"></script>
     <script src="static/js/ShopFooter.js"></script>
 
     <style>
@@ -137,11 +139,11 @@
     </section>
 
 </body>
-<script src="./static/js/jquery.min.js"></script>
+
 <script>
+    var detailInfo = {}
     $(document).ready(function () {
         initSocket();
-        var detailInfo = {}
         var item = GetQueryString('item');
         if (item != null && item != undefined) {
             detailInfo = JSON.parse(item)
